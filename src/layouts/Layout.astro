@@ -1,18 +1,24 @@
 ---
 import "../styles/global.css";
 ---
-import Layout from "../layouts/Layout.astro";
 
-const brand = {
-  name: "CoverData",
-  claimEN: "GDPR & AI Compliance for Tech Companies",
-  claimES: "Consultoría Tech & Datos para empresas globales",
-  subES: "Transformamos los datos de tu negocio en decisiones estratégicas y automatización eficiente.",
-  email: "info@cover-data.com",
-};
----
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CoverData — GDPR & AI Compliance</title>
 
-<Layout title="CoverData — GDPR & AI Compliance">
-  <!-- AQUÍ dentro va TODO tu contenido (las secciones) -->
-  ... (hero azul + 3 cards + ofertas + contacto + footer) ...
-</Layout>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased">
+    <slot />
+  </body>
+</html>
