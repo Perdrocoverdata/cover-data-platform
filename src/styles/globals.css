@@ -1,14 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Tipografía global (ya cargas Inter en Layout.astro) */
-:root {
-  --color-primary: #071A33; /* azul banca */
-  --color-primary-content: #ffffff;
-}
-
+/* Estilo base CoverData */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-white text-slate-900 antialiased;
   }
@@ -23,15 +20,5 @@
 
   a {
     @apply no-underline;
-  }
-}
-
-@layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition;
   }
 }
