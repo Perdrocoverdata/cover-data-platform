@@ -1,78 +1,37 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
+/* Tipografía global (ya cargas Inter en Layout.astro) */
+:root {
+  --color-primary: #071A33; /* azul banca */
+  --color-primary-content: #ffffff;
 }
 
 @layer base {
-    h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
-    }
+  body {
+    @apply bg-white text-slate-900 antialiased;
+  }
 
-    h2 {
-        @apply text-2xl font-bold sm:text-3xl;
-    }
+  h1 {
+    @apply text-4xl font-semibold tracking-tight md:text-5xl;
+  }
 
-    a:not(.btn) {
-        @apply underline transition hover:opacity-80;
-    }
+  h2 {
+    @apply text-2xl font-semibold tracking-tight md:text-3xl;
+  }
 
-    pre {
-        @apply p-6 overflow-x-auto rounded-lg;
-    }
-
-    :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
-        font-size: 0.9em;
-    }
+  a {
+    @apply no-underline;
+  }
 }
 
 @layer components {
-    .markdown {
-        > * {
-            @apply my-6;
-        }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition;
+  }
 
-        :where(h1, h2) {
-            @apply mt-12 mb-6;
-        }
-
-        > :first-child {
-            @apply mt-0;
-        }
-
-        > :last-child {
-            @apply mb-0;
-        }
-    }
-
-    .btn {
-        @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-content cursor-pointer text-center font-semibold no-underline transition-colors;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
-        font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
-
-        &:hover {
-            @apply bg-primary/85;
-        }
-
-        &:disabled {
-            @apply text-gray-400 bg-gray-700;
-        }
-    }
-
-    .btn-lg {
-        --btn-font-size: 1.125rem;
-        --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
-    }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition;
+  }
 }
