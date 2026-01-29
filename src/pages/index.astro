@@ -1,38 +1,108 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
+// CoverData – Home (clean + minimal)
+const brand = {
+  name: "CoverData",
+  claim: "GDPR & AI Compliance for Tech Companies",
+  email: "info@cover-data.com",
+  cta: "Free initial consultation",
+};
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
+const offers = [
+  {
+    title: "Initial GDPR Audit",
+    price: "€500",
+    subtitle: "5 hours",
+    bullets: [
+      "Data flows review",
+      "Risk prioritisation",
+      "Actionable roadmap",
+    ],
+    cta: "Book the audit",
+  },
+  {
+    title: "GDPR Ready for Europe",
+    price: "€1,800",
+    subtitle: "For SaaS & startups",
+    bullets: [
+      "EU market readiness",
+      "DPAs & vendor review",
+      "Enterprise compliance pack",
+    ],
+    cta: "Request details",
+  },
+  {
+    title: "AI Compliance Pack",
+    price: "From €1,200",
+    subtitle: "GDPR + EU AI Act",
+    bullets: [
+      "AI risk assessment",
+      "Regulatory mapping",
+      "Compliance roadmap",
+    ],
+    cta: "Evaluate project",
+  },
+];
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1>CoverData</h1>
-    <p>GDPR & AI Compliance for Tech Companies</p>
-    <a href="#contact">Free initial consultation</a>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    <h3>GDPR & Data Protection Audits</h3>
-    <p>Practical GDPR audits focused on real operational risks for tech companies.</p>
+<html lang="en">
+  <body class="bg-white text-slate-900 antialiased">
+    <header class="border-b border-slate-200">
+      <div class="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/logo.svg" alt="CoverData logo" class="h-9 w-9" />
+          <div>
+            <div class="font-semibold text-lg">{brand.name}</div>
+            <div class="text-xs text-slate-600">{brand.claim}</div>
+          </div>
+        </div>
+        <a href="#contact" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white">
+          {brand.cta}
+        </a>
+      </div>
+    </header>
 
-    <h3>AI Compliance & Risk Assessment</h3>
-    <p>Assessment of AI systems under GDPR and the EU AI Act.</p>
+    <main>
+      <section class="mx-auto max-w-6xl px-6 py-14 text-center">
+        <h1 class="text-4xl md:text-5xl font-semibold">{brand.claim}</h1>
+        <p class="mt-4 text-lg text-slate-700">
+          Practical compliance for SaaS, startups and AI-driven companies operating in Europe.
+        </p>
+        <a href="#pricing" class="mt-6 inline-block rounded-xl bg-slate-900 px-6 py-3 text-white">
+          View pricing
+        </a>
+      </section>
 
-    <h3>Cloud & SaaS Regulatory Advisory</h3>
-    <p>Compliance guidance for cloud infrastructures and SaaS companies.</p>
+      <section id="pricing" class="mx-auto max-w-6xl px-6 py-14">
+        <div class="grid gap-6 md:grid-cols-3">
+          {offers.map((o) => (
+            <div class="rounded-3xl bg-slate-900 text-white p-7">
+              <div class="text-sm text-white/80">{o.subtitle}</div>
+              <div class="mt-2 text-xl font-semibold">{o.title}</div>
+              <div class="mt-4 text-4xl font-semibold">{o.price}</div>
 
-    <h3>Training & Workshops</h3>
-    <p>Practical training sessions for teams and founders.</p>
-    <h3>Initial GDPR Audit</h3>
-    <p>5 hours – 500 €</p>
+              <ul class="mt-6 space-y-2 text-sm">
+                {o.bullets.map((b) => (
+                  <li class="flex gap-2">
+                    <span class="h-2 w-2 mt-1 rounded-full bg-white"></span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
 
-    <h3>AI Compliance Pack</h3>
-    <p>From 1,200 €</p>
+              <a href="#contact" class="mt-7 block rounded-xl bg-white text-slate-900 text-center py-3">
+                {o.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    <h3>Training for Teams</h3>
-    <p>From 600 €</p>
-
-</Layout>
+      <section id="contact" class="mx-auto max-w-6xl px-6 py-14">
+        <h2 class="text-3xl font-semibold">Contact</h2>
+        <p class="mt-2">
+          Email us at <strong>{brand.email}</strong> or book a free consultation.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
