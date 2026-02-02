@@ -1,45 +1,49 @@
 ---
-import BaseLayout from "../../layouts/Layout.astro.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
   <main class="container">
-    <h1>RGPD para Empresas de Inteligencia Artificial</h1>
-
+    <h1>RGPD para empresas de IA</h1>
     <p>
-      Tu sistema de IA trata datos personales.  
-      Si operas en la Unión Europea, tienes una exposición legal directa.
+      Si tu IA trata datos personales y operas en la UE, tienes exposición legal directa.
     </p>
 
-    <h2>El Riesgo</h2>
+    <h2>Riesgos</h2>
     <ul>
       <li>Multas de hasta 20M€ o el 4% de la facturación</li>
-      <li>Bloqueo de servicios en la UE</li>
-      <li>Pérdida de reputación</li>
+      <li>Bloqueos, reclamaciones y exigencias de información</li>
+      <li>Daño reputacional y pérdida de confianza</li>
     </ul>
 
-    <h2>La Solución: CoverData</h2>
+    <h2>Solución CoverData</h2>
     <p>
-      Ayudamos a empresas basadas en IA a cumplir con el RGPD en Europa.
+      Ayudamos a empresas basadas en IA a cumplir con el RGPD en Europa, reduciendo riesgo
+      y acelerando el cierre de acuerdos (clientes, partners e inversores).
     </p>
 
     <h2>Servicios</h2>
     <ul>
-      <li>Evaluación de impacto (DPIA) para sistemas de IA</li>
-      <li>Auditoría RGPD para plataformas de IA</li>
-      <li>DPO externo especializado en IA</li>
-      <li>Políticas legales para IA</li>
-      <li>Transferencias internacionales de datos</li>
+      <li>Evaluación de impacto (DPIA) aplicada a sistemas de IA</li>
+      <li>Auditoría RGPD para plataformas, chatbots y automatizaciones</li>
+      <li>DPO externo para startups y pymes tecnológicas</li>
+      <li>Adecuación web y políticas (privacidad, cookies, proveedores)</li>
+      <li>Transferencias internacionales (cláusulas, análisis y medidas)</li>
     </ul>
 
-    <h2>Solicita tu diagnóstico gratuito</h2>
-    <p>
-      Envíanos tus datos y analizaremos tu nivel de riesgo.
+    <p class="cta-wrap">
+      <a class="cta" href="/es/contacto">Solicitar diagnóstico RGPD IA</a>
     </p>
-
-    <a href="/es/contacto" class="cta">
-      Diagnóstico RGPD IA
-    </a>
   </main>
 </Layout>
+
+<style>
+  .container { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  .cta-wrap { margin-top: 18px; }
+  .cta{
+    display:inline-block; padding: 12px 16px; border-radius: 12px;
+    border: 1px solid #111827; background:#111827; color:#fff; text-decoration:none;
+  }
+</style>
+
 
