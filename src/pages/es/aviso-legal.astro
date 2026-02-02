@@ -4,43 +4,59 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Aviso Legal | CoverData" lang="es">
   <main class="container legal">
-    <h1>Aviso Legal</h1>
+    <h1>Aviso Legal y Condiciones Generales de Uso</h1>
 
+    <h2>1. Datos identificativos del titular</h2>
     <p>
-      En cumplimiento de la Ley 34/2002, de servicios de la sociedad de la información (LSSI-CE),
-      se informa de los siguientes datos:
+      En cumplimiento del deber de información recogido en el artículo 10 de la Ley 34/2002,
+      de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI), se exponen
+      los siguientes datos:
+    </p>
+    <ul>
+      <li><strong>Titular:</strong> Cover Data S.L.</li>
+      <li><strong>NIF:</strong> BXXXXXXXX</li>
+      <li><strong>Domicilio:</strong> Madrid, España</li>
+      <li><strong>Registro:</strong> Datos de inscripción en el Registro Mercantil (si aplica)</li>
+      <li><strong>Email:</strong> <a href="mailto:info@cover-data.com">info@cover-data.com</a></li>
+    </ul>
+
+    <h2>2. Objeto y ámbito de aplicación</h2>
+    <p>
+      Este sitio web tiene como objeto ofrecer servicios de consultoría, auditoría y formación
+      en protección de datos (RGPD), operando principalmente en España y Europa, con alcance
+      internacional. El acceso a la web implica la aceptación de este aviso legal.
     </p>
 
-    <h2>1. Titular del sitio web</h2>
+    <h2>3. Protección de datos (RGPD)</h2>
     <p>
-      Denominación comercial: <strong>CoverData</strong><br />
-      Email: <a href="mailto:info@cover-data.com">info@cover-data.com</a><br />
-      País: España
+      Los datos recabados a través de formularios o contacto serán tratados conforme al RGPD
+      y a la Ley Orgánica 3/2018. Para más información, consulte nuestra
+      <a href="/es/privacy">Política de Privacidad</a>.
     </p>
 
-    <h2>2. Usuarios</h2>
+    <h2>4. Condiciones de uso</h2>
     <p>
-      El acceso a este sitio atribuye la condición de usuario, que acepta las condiciones aquí reflejadas.
+      El usuario se compromete a hacer un uso adecuado de los contenidos. Queda prohibida
+      la reproducción, distribución o modificación sin autorización expresa.
     </p>
 
-    <h2>3. Uso del sitio</h2>
+    <h2>5. Propiedad intelectual e industrial</h2>
     <p>
-      El usuario se compromete a hacer un uso adecuado de los contenidos y servicios.
+      Todos los contenidos (textos, logotipos, diseño, código) son propiedad de la consultora
+      o de terceros licenciantes.
     </p>
 
-    <h2>4. Propiedad intelectual</h2>
+    <h2>6. Responsabilidad</h2>
     <p>
-      Todos los contenidos son titularidad de CoverData o de sus licenciantes.
+      La consultora no se hace responsable del mal uso de la información ni de los contenidos
+      enlazados a sitios externos. Aunque se opera internacionalmente bajo el RGPD, no se
+      garantiza la adecuación a legislaciones de terceros países fuera de la UE.
     </p>
 
-    <h2>5. Responsabilidad</h2>
+    <h2>7. Ley aplicable y jurisdicción</h2>
     <p>
-      CoverData no se hace responsable del uso indebido del sitio web.
-    </p>
-
-    <h2>6. Legislación</h2>
-    <p>
-      La relación se rige por la legislación española.
+      Para cualquier conflicto, la legislación aplicable será la española y la europea (RGPD).
+      Las partes se someten a los Juzgados y Tribunales de Madrid, España.
     </p>
   </main>
 </Layout>
@@ -48,6 +64,11 @@ import Layout from "../../layouts/Layout.astro";
 <style>
   .legal h1 { font-size: 34px; margin-bottom: 18px; }
   .legal h2 { margin-top: 22px; font-size: 20px; }
-  .legal p { line-height: 1.7; font-size: 15px; color: #334155; }
+  .legal p, .legal li {
+    line-height: 1.7;
+    font-size: 15px;
+    color: #334155;
+  }
+  .legal ul { margin-left: 18px; }
 </style>
 
