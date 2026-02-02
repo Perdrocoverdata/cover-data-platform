@@ -1,38 +1,47 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<BaseLayout>
+<Layout>
   <main class="container">
     <h1>GDPR Compliance for AI Companies</h1>
-
     <p>
-      Your AI processes personal data.  
-      If you operate in the European Union, you are legally exposed.
+      If your AI processes personal data and you operate in the EU, you have direct legal exposure.
     </p>
 
     <h2>The Risk</h2>
     <ul>
-      <li>Fines up to €20M or 4% of global revenue</li>
-      <li>Product suspension in the EU</li>
-      <li>Reputational damage</li>
+      <li>Fines up to €20M or 4% of global annual revenue</li>
+      <li>Requests, audits, and enforcement actions</li>
+      <li>Reputational damage and loss of trust</li>
     </ul>
 
-    <h2>The Solution: CoverData</h2>
+    <h2>The CoverData Solution</h2>
     <p>
-      We help AI-driven companies achieve GDPR compliance across Europe.
+      We help AI-driven companies become GDPR-compliant in Europe, reducing risk and accelerating deals.
     </p>
 
-    <h2>Our Services</h2>
+    <h2>Services</h2>
     <ul>
       <li>AI Data Protection Impact Assessment (DPIA)</li>
-      <li>GDPR Audits for AI Systems</li>
-      <li>External DPO for AI Startups</li>
-      <li>Policies for AI Platforms</li>
-      <li>International Data Transfers</li>
+      <li>GDPR audit for AI systems, platforms, and chatbots</li>
+      <li>External DPO for startups and tech SMEs</li>
+      <li>Website compliance (privacy, cookies, vendors)</li>
+      <li>International data transfers (SCCs + safeguards)</li>
     </ul>
 
-    <h2>Get your free AI GDPR Risk Check</h2>
-    <p>
-      Send us your details and
+    <p class="cta-wrap">
+      <a class="cta" href="/en/contact">Request a free AI GDPR risk check</a>
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .container { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  .cta-wrap { margin-top: 18px; }
+  .cta{
+    display:inline-block; padding: 12px 16px; border-radius: 12px;
+    border: 1px solid #111827; background:#111827; color:#fff; text-decoration:none;
+  }
+</style>
 
