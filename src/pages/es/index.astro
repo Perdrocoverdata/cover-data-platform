@@ -10,36 +10,172 @@ const brand = {
 ---
 
 <Layout title="CoverData — Consultoría RGPD & IA">
-  <section class="relative overflow-hidden bg-gradient-to-b from-[#071A33] to-[#0A2446]">
-    <div class="mx-auto max-w-6xl px-6 pt-24 pb-20 text-white">
-      <header class="flex items-center justify-between">
-        <div class="flex items-center gap-4 bg-white/95 px-6 py-4 rounded-3xl shadow-md">
-          <img src="/coverdata-logo.png" alt="CoverData logo" class="h-20 md:h-24 w-auto" />
-          <div>
-            <div class="text-xl font-semibold text-slate-900">{brand.name}</div>
-            <div class="text-xs text-slate-600">GDPR & AI Compliance</div>
+  <section class="hero">
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brandbox">
+          <!-- Si NO existe /coverdata-logo.png, comenta esta línea y usa el Logo del header -->
+          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
+          <div class="brandtext">
+            <div class="brandname">{brand.name}</div>
+            <div class="brandsub">GDPR & AI Compliance</div>
           </div>
         </div>
 
-        <div class="flex gap-2 text-sm">
-          <a href="/es/" class="text-white font-semibold">ES</a>
-          <span class="text-white/40">|</span>
-          <a href="/en/" class="text-white/80 hover:text-white">EN</a>
+        <div class="lang">
+          <a href="/es/" class="active">ES</a>
+          <span class="sep">|</span>
+          <a href="/en/">EN</a>
         </div>
       </header>
 
-      <h1 class="mt-14 text-4xl md:text-6xl font-semibold tracking-tight">{brand.claim}</h1>
-      <p class="mt-6 text-lg md:text-xl max-w-xl text-white/90">{brand.sub}</p>
+      <h1 class="h1">{brand.claim}</h1>
+      <p class="lead">{brand.sub}</p>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-3">
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">Auditoría RGPD</div>
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">Cumplimiento IA</div>
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">Expansión UE</div>
+      <div class="cards">
+        <div class="card">
+          <div class="cardtitle">Auditoría RGPD</div>
+          <div class="cardtext">Diagnóstico, gap analysis y plan de adecuación.</div>
+        </div>
+
+        <div class="card">
+          <div class="cardtitle">Cumplimiento IA</div>
+          <div class="cardtext">DPIA, privacidad por diseño y gobernanza de datos.</div>
+        </div>
+
+        <div class="card">
+          <div class="cardtitle">Expansión UE</div>
+          <div class="cardtext">Transferencias internacionales, SCCs y vendors.</div>
+        </div>
       </div>
 
-      <div class="mt-10 text-sm text-white/80">
-        Contacto: <a class="underline" href="mailto:info@cover-data.com">info@cover-data.com</a>
+      <div class="contact">
+        Contacto:
+        <a href={`mailto:${brand.email}`}>{brand.email}</a>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .hero{
+    background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+    overflow: hidden;
+  }
+
+  .wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 72px 20px 64px;
+    color: #fff;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+
+  .brandbox{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 22px;
+    padding: 14px 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    color:#0f172a;
+  }
+
+  .brandlogo{
+    height: 76px; /* aquí tienes el “logo grande” */
+    width: auto;
+    display:block;
+  }
+
+  .brandname{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .brandsub{
+    font-size: 12px;
+    color: #475569;
+    margin-top: 2px;
+  }
+
+  .lang{
+    font-size: 14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    opacity: 0.95;
+  }
+  .lang a{ color:#fff; text-decoration:none; }
+  .lang a:hover{ text-decoration:underline; }
+  .lang .active{ font-weight:700; }
+  .sep{ color: rgba(255,255,255,0.45); }
+
+  .h1{
+    margin-top: 38px;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    max-width: 920px;
+  }
+
+  .lead{
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 640px;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .cards{
+    margin-top: 34px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 900px){
+    .cards{ grid-template-columns: repeat(3, 1fr); }
+    .h1{ font-size: 56px; }
+  }
+
+  .card{
+    background: #fff;
+    color: #0f172a;
+    border-radius: 22px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+  }
+
+  .cardtitle{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .cardtext{
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  .contact{
+    margin-top: 18px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact a{
+    color:#fff;
+    text-decoration:underline;
+    text-underline-offset: 3px;
+  }
+</style>
+
