@@ -3,72 +3,82 @@ import Layout from "../../layouts/Layout.astro";
 
 const brand = {
   name: "CoverData",
-  claim: "GDPR & AI Compliance for Tech Companies",
-  sub: "We help tech companies operate safely, compliantly and at scale in Europe.",
+  claim: "Tech & Data Compliance for global companies",
+  sub: "We help tech companies operate safely and GDPR-compliant across Europe.",
   email: "info@cover-data.com",
 };
 ---
 
-<Layout title="CoverData — GDPR & AI Compliance">
-  <section class="relative overflow-hidden bg-gradient-to-b from-[#071A33] to-[#0A2446]">
-    <div class="mx-auto max-w-6xl px-6 pt-24 pb-20 text-white">
-      <header class="flex items-center justify-between">
-        <div class="flex items-center gap-4 bg-white/95 px-6 py-4 rounded-3xl shadow-md">
-          <img src="/coverdata-logo.png" alt="CoverData logo" class="h-20 md:h-24 w-auto" />
-          <div>
-            <div class="text-xl font-semibold text-slate-900">{brand.name}</div>
-            <div class="text-xs text-slate-600">{brand.claim}</div>
+<Layout title="CoverData — GDPR & AI Compliance" lang="en">
+  <section class="hero">
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brandbox">
+          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
+          <div class="brandtext">
+            <div class="brandname">{brand.name}</div>
+            <div class="brandsub">GDPR & AI Compliance</div>
           </div>
         </div>
 
-        <div class="flex gap-2 text-sm">
-          <a href="/es/" class="text-white/80 hover:text-white">ES</a>
-          <span class="text-white/40">|</span>
-          <a href="/en/" class="text-white font-semibold">EN</a>
+        <div class="lang">
+          <a href="/es/">ES</a>
+          <span class="sep">|</span>
+          <a href="/en/" class="active">EN</a>
         </div>
       </header>
 
-      <h1 class="mt-14 text-4xl md:text-6xl font-semibold tracking-tight">{brand.claim}</h1>
-      <p class="mt-6 text-lg md:text-xl max-w-xl text-white/90">{brand.sub}</p>
+      <h1 class="h1">{brand.claim}</h1>
+      <p class="lead">{brand.sub}</p>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-3">
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
-          <div class="text-xs font-semibold text-slate-500">Service 01</div>
-          <div class="mt-2 text-lg font-semibold">GDPR Risk Audit</div>
-          <div class="mt-2 text-sm text-slate-700">Practical assessment of data flows, vendors, and contracts.</div>
+      <div class="cards">
+        <div class="card">
+          <div class="cardtitle">GDPR Audit</div>
+          <div class="cardtext">Assessment, gap analysis, and remediation roadmap.</div>
         </div>
 
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
-          <div class="text-xs font-semibold text-slate-500">Service 02</div>
-          <div class="mt-2 text-lg font-semibold">AI Compliance Pack</div>
-          <div class="mt-2 text-sm text-slate-700">Risk mapping aligned with GDPR + EU AI Act.</div>
+        <div class="card">
+          <div class="cardtitle">AI Compliance</div>
+          <div class="cardtext">DPIA, privacy by design, and data governance.</div>
         </div>
 
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
-          <div class="text-xs font-semibold text-slate-500">Service 03</div>
-          <div class="mt-2 text-lg font-semibold">EU Market Readiness</div>
-          <div class="mt-2 text-sm text-slate-700">Compliance toolkit for SaaS companies selling into Europe.</div>
+        <div class="card">
+          <div class="cardtitle">EU Expansion</div>
+          <div class="cardtext">International transfers, SCCs, and vendor compliance.</div>
         </div>
       </div>
 
-      <div class="mt-10 text-sm text-white/80">
-        Contact: <a class="underline" href="mailto:info@cover-data.com">{brand.email}</a>
+      <div class="contact">
+        Contact: <a href={`mailto:${brand.email}`}>{brand.email}</a>
       </div>
     </div>
   </section>
-
-  <!-- FOOTER (EN) -->
-  <footer class="bg-white border-t border-slate-200">
-    <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-slate-600 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-      <div>© {new Date().getFullYear()} CoverData</div>
-
-      <div class="flex gap-4">
-        <a class="underline" href="/en/privacy">Privacy Policy</a>
-        <a class="underline" href="/en/legal">Legal Notice</a>
-        <a class="underline" href="/en/cookies">Cookies</a>
-      </div>
-    </div>
-  </footer>
 </Layout>
 
+<style>
+  .hero{ background: linear-gradient(180deg, #071A33 0%, #0A2446 100%); overflow: hidden; }
+  .wrap{ max-width: 1100px; margin: 0 auto; padding: 72px 20px 64px; color: #fff; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .brandbox{ display:flex; align-items:center; gap:14px; background: rgba(255,255,255,0.95); border-radius: 22px; padding: 14px 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); color:#0f172a; }
+  .brandlogo{ height: 76px; width:auto; display:block; }
+  .brandname{ font-size: 20px; font-weight: 700; line-height: 1.1; }
+  .brandsub{ font-size: 12px; color: #475569; margin-top: 2px; }
+  .lang{ font-size: 14px; display:flex; align-items:center; gap:8px; opacity: 0.95; }
+  .lang a{ color:#fff; text-decoration:none; }
+  .lang a:hover{ text-decoration:underline; }
+  .lang .active{ font-weight:700; }
+  .sep{ color: rgba(255,255,255,0.45); }
+
+  .h1{ margin-top: 38px; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; max-width: 920px; }
+  .lead{ margin-top: 16px; font-size: 18px; line-height: 1.6; max-width: 640px; color: rgba(255,255,255,0.88); }
+
+  .cards{ margin-top: 34px; display:grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 900px){ .cards{ grid-template-columns: repeat(3, 1fr); } .h1{ font-size: 56px; } }
+  .card{ background:#fff; color:#0f172a; border-radius: 22px; padding: 18px 18px 16px; box-shadow: 0 14px 35px rgba(0,0,0,0.25); }
+  .cardtitle{ font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .cardtext{ font-size: 14px; color:#334155; line-height: 1.55; }
+
+  .contact{ margin-top: 18px; font-size: 14px; color: rgba(255,255,255,0.85); }
+  .contact a{ color:#fff; text-decoration:underline; text-underline-offset: 3px; }
+</style>
 
