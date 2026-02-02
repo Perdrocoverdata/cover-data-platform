@@ -2,31 +2,50 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Cookies Policy | CoverData">
-  <section class="mx-auto max-w-4xl px-6 py-16">
-    <h1 class="text-3xl md:text-4xl font-semibold tracking-tight">Cookies Policy</h1>
+<Layout title="Cookies Policy | CoverData" lang="en">
+  <main class="container legal">
+    <h1>Cookies Policy</h1>
 
-    <div class="mt-8 space-y-6 text-slate-700">
-      <p>
-        This website does not use tracking cookies (analytics or advertising). Only technical cookies may be used for
-        basic operation.
-      </p>
-      <p>
-        If analytics/marketing cookies are added in the future, this policy will be updated and a cookie banner will be
-        implemented where required.
-      </p>
-    </div>
-  </section>
-<footer class="bg-white border-t border-slate-200">
-  <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-slate-600 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-    <div>© {new Date().getFullYear()} CoverData</div>
+    <p>
+      This website only uses technical cookies strictly necessary for its operation,
+      in accordance with the GDPR and the ePrivacy regulations.
+    </p>
 
-    <div class="flex gap-4">
-      <a class="underline" href="/en/privacy">Privacy Policy</a>
-      <a class="underline" href="/en/legal">Legal Notice</a>
-      <a class="underline" href="/en/cookies">Cookies</a>
-    </div>
-  </div>
-</footer>
+    <h2>1. What are cookies?</h2>
+    <p>
+      Cookies are small text files downloaded to the user’s device to store and
+      retrieve information about browsing activity.
+    </p>
+
+    <h2>2. Types of cookies</h2>
+    <ul>
+      <li>Technical cookies</li>
+      <li>Analytics cookies</li>
+      <li>Personalisation cookies</li>
+      <li>Advertising cookies</li>
+    </ul>
+
+    <h2>3. Cookies used on this website</h2>
+    <p>
+      At present, only technical cookies strictly necessary for the operation of
+      the website are used.
+    </p>
+
+    <h2>4. How to disable cookies</h2>
+    <p>
+      Users may allow, block or delete cookies through their browser settings.
+    </p>
+
+    <h2>5. Data controller</h2>
+    <p>
+      CoverData – <a href="mailto:info@cover-data.com">info@cover-data.com</a>
+    </p>
+  </main>
 </Layout>
 
+<style>
+  .legal h1 { font-size: 34px; margin-bottom: 18px; }
+  .legal h2 { margin-top: 22px; font-size: 20px; }
+  .legal p, .legal li { line-height: 1.7; font-size: 15px; color: #334155; }
+  .legal ul { margin-left: 18px; }
+</style>
