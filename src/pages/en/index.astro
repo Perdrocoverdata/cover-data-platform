@@ -32,16 +32,43 @@ const brand = {
       <p class="mt-6 text-lg md:text-xl max-w-xl text-white/90">{brand.sub}</p>
 
       <div class="mt-12 grid gap-8 md:grid-cols-3">
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">GDPR Risk Audit</div>
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">AI Compliance Pack</div>
-        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">EU Market Readiness</div>
+        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
+          <div class="text-xs font-semibold text-slate-500">Service 01</div>
+          <div class="mt-2 text-lg font-semibold">GDPR Risk Audit</div>
+          <div class="mt-2 text-sm text-slate-700">Practical assessment of data flows, vendors, and contracts.</div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
+          <div class="text-xs font-semibold text-slate-500">Service 02</div>
+          <div class="mt-2 text-lg font-semibold">AI Compliance Pack</div>
+          <div class="mt-2 text-sm text-slate-700">Risk mapping aligned with GDPR + EU AI Act.</div>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 text-slate-800 shadow">
+          <div class="text-xs font-semibold text-slate-500">Service 03</div>
+          <div class="mt-2 text-lg font-semibold">EU Market Readiness</div>
+          <div class="mt-2 text-sm text-slate-700">Compliance toolkit for SaaS companies selling into Europe.</div>
+        </div>
       </div>
 
       <div class="mt-10 text-sm text-white/80">
-        Contact: <a class="underline" href="mailto:info@cover-data.com">info@cover-data.com</a>
+        Contact: <a class="underline" href="mailto:info@cover-data.com">{brand.email}</a>
       </div>
     </div>
   </section>
+
+  <!-- FOOTER (EN) -->
+  <footer class="bg-white border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-6 py-8 text-sm text-slate-600 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div>© {new Date().getFullYear()} CoverData</div>
+
+      <div class="flex gap-4">
+        <a class="underline" href="/en/privacy">Privacy Policy</a>
+        <a class="underline" href="/en/legal">Legal Notice</a>
+        <a class="underline" href="/en/cookies">Cookies</a>
+      </div>
+    </div>
+  </footer>
 </Layout>
 
 
