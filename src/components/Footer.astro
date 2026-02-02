@@ -1,9 +1,60 @@
----
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand">
+        <strong>CoverData</strong>
+        <div class="muted">GDPR & AI Compliance</div>
+      </div>
 
----
+      <nav class="links" aria-label="Legal">
+        <a href="/es/aviso-legal">Aviso legal</a>
+        <a href="/es/politica-privacidad">Privacidad</a>
+        <a href="/es/politica-cookies">Cookies</a>
+        <a href="/es/terminos-condiciones">Términos</a>
+      </nav>
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
-    </p>
+      <nav class="links" aria-label="Legal EN">
+        <a href="/en/legal-notice">Legal notice</a>
+        <a href="/en/privacy-policy">Privacy</a>
+        <a href="/en/cookie-policy">Cookies</a>
+        <a href="/en/terms">Terms</a>
+      </nav>
+    </div>
+
+    <div class="bottom muted">
+      © {new Date().getFullYear()} CoverData — Spain
+    </div>
+  </div>
 </footer>
+
+<style>
+  .site-footer{
+    background:#071A33;
+    color:#fff;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding: 26px 20px;
+  }
+  .cols{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items:start;
+  }
+  @media (min-width: 900px){
+    .cols{ grid-template-columns: 1.2fr 1fr 1fr; }
+  }
+  .muted{ color: rgba(255,255,255,.75); font-size: 14px; margin-top: 6px; }
+  .links{ display:flex; flex-direction:column; gap: 8px; }
+  .links a{
+    color:#fff;
+    text-decoration:none;
+    opacity:.9;
+  }
+  .links a:hover{ text-decoration:underline; opacity:1; }
+  .bottom{ margin-top: 18px; font-size: 13px; }
+</style>
+
