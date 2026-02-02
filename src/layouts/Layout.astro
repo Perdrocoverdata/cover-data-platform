@@ -1,24 +1,41 @@
 ---
-import "../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CoverData — GDPR & AI Compliance</title>
+<Layout>
+  <main class="container">
+    <h1>GDPR Compliance for AI Companies</h1>
+    <p>Your AI processes personal data. If you operate in the EU, you are legally exposed.</p>
 
-    <!-- Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <h2>The Risk</h2>
+    <ul>
+      <li>Fines up to €20M or 4% of global revenue</li>
+      <li>Service interruption in the EU</li>
+      <li>Reputational damage</li>
+    </ul>
 
-  <body class="bg-white text-slate-900 antialiased">
-    <slot />
-  </body>
-</html>
+    <h2>The Solution: CoverData</h2>
+    <p>We help AI-driven companies achieve GDPR compliance across Europe.</p>
+
+    <h2>Services</h2>
+    <ul>
+      <li>AI Data Protection Impact Assessment (DPIA)</li>
+      <li>GDPR audit for AI systems</li>
+      <li>External DPO for AI startups</li>
+      <li>Website & privacy compliance</li>
+      <li>International data transfers</li>
+    </ul>
+
+    <p>
+      <a class="cta" href="/en/contact">Free AI GDPR Risk Check</a>
+    </p>
+  </main>
+</Layout>
+
+<style>
+  .container { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  .cta{
+    display:inline-block; padding: 12px 16px; border-radius: 12px;
+    border: 1px solid #111827; background:#111827; color:#fff; text-decoration:none;
+  }
+</style>
