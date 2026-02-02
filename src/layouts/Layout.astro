@@ -1,11 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-const { title = "CoverData" } = Astro.props;
+const { title = "CoverData", lang = "en" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,18 +14,22 @@ const { title = "CoverData" } = Astro.props;
 
   <body>
     <Header />
-    <main class="container">
-      <slot />
-    </main>
+    <slot />
     <Footer />
   </body>
 </html>
 
 <style>
-  .container {
+  /* Utility container: úsala en páginas "normales" (privacidad, contacto, etc.) */
+  :global(.container) {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px 60px;
+  }
+
+  /* Evita márgenes raros por defecto */
+  body {
+    margin: 0;
   }
 </style>
 
