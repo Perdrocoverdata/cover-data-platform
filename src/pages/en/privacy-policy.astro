@@ -1,59 +1,145 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+const today = new Date().toLocaleDateString("en-GB");
 ---
 
 <Layout title="Privacy Policy | CoverData" lang="en">
   <main class="container legal">
     <h1>Privacy Policy</h1>
+    <p class="update">Last updated: {today}</p>
 
     <p>
-      In accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018,
-      users are informed about the processing of their personal data.
+      At <strong>CoverData</strong>, we respect your privacy and are committed to protecting
+      your personal data in accordance with Regulation (EU) 2016/679 (GDPR) and other
+      applicable data protection laws.
+    </p>
+
+    <p>
+      This Privacy Policy explains how we collect, use and protect your personal data
+      when you visit <strong>https://www.cover-data.com</strong>.
     </p>
 
     <h2>1. Data controller</h2>
     <p>
-      Controller: Cover Data S.L.<br />
-      Email: <a href="mailto:info@cover-data.com">info@cover-data.com</a><br />
-      Country: Spain
+      <strong>Controller:</strong> Cover Data S.L.<br />
+      <strong>Address:</strong> Madrid, Spain<br />
+      <strong>Email:</strong>
+      <a href="mailto:info@cover-data.com">info@cover-data.com</a>
     </p>
 
-    <h2>2. Purpose of processing</h2>
+    <h2>2. What personal data we collect</h2>
     <ul>
-      <li>Respond to enquiries and information requests.</li>
-      <li>Manage professional communications.</li>
-      <li>Provide contracted services.</li>
+      <li>Identification data: name, email address, phone number.</li>
+      <li>Technical data: IP address, browser type, operating system.</li>
+      <li>Usage data: pages visited, time spent on the site.</li>
+      <li>Commercial data: preferences if you subscribe to communications.</li>
     </ul>
 
-    <h2>3. Legal basis</h2>
+    <h2>3. How we collect your data</h2>
+    <ul>
+      <li>When you fill in contact forms.</li>
+      <li>When you subscribe to our communications.</li>
+      <li>When you browse our website (technical and analytical cookies).</li>
+    </ul>
+
+    <h2>4. Purpose and legal basis</h2>
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Purpose</th>
+          <th>Legal basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Respond to enquiries</td>
+          <td>Consent / Legitimate interest</td>
+        </tr>
+        <tr>
+          <td>Provide services</td>
+          <td>Performance of a contract</td>
+        </tr>
+        <tr>
+          <td>Improve the website</td>
+          <td>Legitimate interest</td>
+        </tr>
+        <tr>
+          <td>Send communications</td>
+          <td>Consent</td>
+        </tr>
+        <tr>
+          <td>Legal compliance</td>
+          <td>Legal obligation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Data sharing</h2>
     <p>
-      Processing is based on user consent, contractual necessity,
-      and legal obligations.
+      We do not sell your data. We may share it with trusted service providers
+      (hosting, email, analytics) under confidentiality agreements and in compliance
+      with the GDPR.
     </p>
 
-    <h2>4. Data retention</h2>
+    <h2>6. International data transfers</h2>
     <p>
-      Data will be retained while a relationship exists or as required by law.
+      Where data is transferred outside the EU, appropriate safeguards such as
+      Standard Contractual Clauses will be applied.
     </p>
 
-    <h2>5. User rights</h2>
+    <h2>7. Data retention</h2>
+    <ul>
+      <li>Contact data: up to 12 months.</li>
+      <li>Marketing data: until you withdraw your consent.</li>
+      <li>Legal obligations: as required by law.</li>
+    </ul>
+
+    <h2>8. Your rights</h2>
     <p>
-      Users may exercise their rights by emailing
+      You may exercise your rights of access, rectification, erasure, restriction,
+      objection, portability and withdraw your consent by contacting
       <a href="mailto:info@cover-data.com">info@cover-data.com</a>.
     </p>
-
-    <h2>6. Security</h2>
     <p>
-      CoverData applies appropriate technical and organisational measures
-      to ensure data security.
+      You also have the right to lodge a complaint with your data protection authority.
+    </p>
+
+    <h2>9. Cookies</h2>
+    <p>
+      We use cookies for basic functionality, analytics and preferences.
+      You can manage them through your browser or the cookie panel.
+    </p>
+
+    <h2>10. Security</h2>
+    <p>
+      We apply appropriate technical and organisational measures to protect your data.
+    </p>
+
+    <h2>11. Changes</h2>
+    <p>
+      This policy may be updated from time to time. The current version will always
+      be available on this page.
     </p>
   </main>
 </Layout>
 
 <style>
-  .legal h1 { font-size: 34px; margin-bottom: 18px; }
+  .legal h1 { font-size: 34px; margin-bottom: 10px; }
+  .update { font-size: 13px; color: #64748b; margin-bottom: 20px; }
   .legal h2 { margin-top: 22px; font-size: 20px; }
   .legal p, .legal li { line-height: 1.7; font-size: 15px; color: #334155; }
   .legal ul { margin-left: 18px; }
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .legal-table th, .legal-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+  }
+  .legal-table th { background: #f1f5f9; }
 </style>
 
