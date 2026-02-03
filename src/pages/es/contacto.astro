@@ -1,1 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contacto | CoverData" lang="es">
+  <main class="container legal">
+    <h1>Contacto</h1>
+
+    <p>Solicita tu diagnóstico gratuito RGPD & IA.</p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form"
+    >
+      <!-- Campo oculto obligatorio para Netlify -->
+      <input type="hidden" name="form-name" value="contact" />
+
+      <!-- Anti-spam -->
+      <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <label>
+        Nombre
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Mensaje
+        <textarea name="message" required></textarea>
+      </label>
+
+      <!-- Checkbox legal obligatorio -->
+      <label class="legal-check">
+        <input type="checkbox" name="privacy" required />
+        He leído y acepto la
+        <a href="/es/privacy" target="_blank">Política de Privacidad</a>
+      </label>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+</Layout>
+
+<style>
+  .contact-form {
+    max-width: 520px;
+    margin-top: 20px;
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 14px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+  }
+  .legal-check {
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+</style>
 
