@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 const { title = "CoverData", lang = "en" } = Astro.props;
 ---
 
@@ -12,6 +13,7 @@ const { title = "CoverData", lang = "en" } = Astro.props;
     <title>{title}</title>
   </head>
 
+<CookieBanner />
   <body>
     <Header />
     <slot />
