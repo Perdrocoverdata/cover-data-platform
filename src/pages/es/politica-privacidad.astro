@@ -1,61 +1,146 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+const today = new Date().toLocaleDateString("es-ES");
 ---
 
 <Layout title="Política de Privacidad | CoverData" lang="es">
   <main class="container legal">
     <h1>Política de Privacidad</h1>
+    <p class="update">Última actualización: {today}</p>
 
     <p>
-      En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y de la Ley Orgánica 3/2018 (LOPDGDD),
-      se informa a los usuarios sobre el tratamiento de sus datos personales.
+      En <strong>CoverData</strong> respetamos tu privacidad y estamos comprometidos con la
+      protección de tus datos personales, conforme al Reglamento (UE) 2016/679 (RGPD) y
+      demás normativa aplicable.
+    </p>
+
+    <p>
+      Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tus datos
+      cuando visitas <strong>https://www.cover-data.com</strong>.
     </p>
 
     <h2>1. Responsable del tratamiento</h2>
     <p>
-      Responsable: CoverData<br />
-      Email: <a href="mailto:info@cover-data.com">info@cover-data.com</a><br />
-      País: España
+      <strong>Responsable:</strong> Cover Data S.L.<br />
+      <strong>Dirección:</strong> Madrid, España<br />
+      <strong>Email:</strong> <a href="mailto:info@cover-data.com">info@cover-data.com</a>
     </p>
 
-    <h2>2. Finalidad del tratamiento</h2>
+    <h2>2. Qué datos recopilamos</h2>
     <ul>
-      <li>Responder a solicitudes de información.</li>
-      <li>Gestionar comunicaciones comerciales.</li>
-      <li>Prestar los servicios contratados.</li>
+      <li>Datos identificativos: nombre, email, teléfono.</li>
+      <li>Datos técnicos: IP, navegador, sistema operativo.</li>
+      <li>Datos de uso: páginas visitadas, tiempo de navegación.</li>
+      <li>Datos comerciales: preferencias si te suscribes a comunicaciones.</li>
     </ul>
 
-    <h2>3. Base legal</h2>
+    <h2>3. Cómo obtenemos tus datos</h2>
+    <ul>
+      <li>Cuando rellenas formularios de contacto.</li>
+      <li>Cuando te suscribes a nuestras comunicaciones.</li>
+      <li>Cuando navegas por nuestra web (cookies técnicas y analíticas).</li>
+    </ul>
+
+    <h2>4. Finalidad y base legal</h2>
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th>Finalidad</th>
+          <th>Base legal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Responder a consultas</td>
+          <td>Consentimiento / Interés legítimo</td>
+        </tr>
+        <tr>
+          <td>Prestar servicios</td>
+          <td>Ejecución de contrato</td>
+        </tr>
+        <tr>
+          <td>Mejorar la web</td>
+          <td>Interés legítimo</td>
+        </tr>
+        <tr>
+          <td>Envío de comunicaciones</td>
+          <td>Consentimiento</td>
+        </tr>
+        <tr>
+          <td>Cumplimiento legal</td>
+          <td>Obligación legal</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Cesión de datos</h2>
     <p>
-      El tratamiento se basa en el consentimiento del interesado y, en su caso, en la ejecución
-      de un contrato o en el cumplimiento de obligaciones legales.
+      No vendemos tus datos. Podemos compartirlos con proveedores que nos prestan servicios
+      (hosting, email, analítica), bajo contratos de confidencialidad y conforme al RGPD.
     </p>
 
-    <h2>4. Conservación de datos</h2>
+    <h2>6. Transferencias internacionales</h2>
     <p>
-      Los datos se conservarán mientras exista una relación con el usuario o durante los plazos
-      legalmente establecidos.
+      En caso de transferencias fuera de la UE, se garantizarán las medidas legales
+      adecuadas (Cláusulas Contractuales Tipo u otros mecanismos).
     </p>
 
-    <h2>5. Derechos</h2>
+    <h2>7. Conservación de los datos</h2>
+    <ul>
+      <li>Contacto: hasta 12 meses.</li>
+      <li>Marketing: hasta que retires tu consentimiento.</li>
+      <li>Obligaciones legales: según la normativa vigente.</li>
+    </ul>
+
+    <h2>8. Derechos del usuario</h2>
     <p>
-      El usuario puede ejercer los derechos de acceso, rectificación, supresión, oposición,
-      limitación y portabilidad escribiendo a
+      Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación,
+      oposición, portabilidad y retirar el consentimiento escribiendo a
       <a href="mailto:info@cover-data.com">info@cover-data.com</a>.
     </p>
-
-    <h2>6. Seguridad</h2>
     <p>
-      CoverData adopta las medidas técnicas y organizativas necesarias para garantizar la seguridad
-      de los datos personales.
+      También puedes presentar una reclamación ante la Agencia Española de Protección
+      de Datos (AEPD).
+    </p>
+
+    <h2>9. Cookies</h2>
+    <p>
+      Utilizamos cookies para el funcionamiento básico, analítica y preferencias.
+      Puedes gestionarlas desde tu navegador o el panel de cookies.
+    </p>
+
+    <h2>10. Seguridad</h2>
+    <p>
+      Adoptamos medidas técnicas y organizativas adecuadas para proteger tus datos.
+    </p>
+
+    <h2>11. Cambios</h2>
+    <p>
+      Esta política puede actualizarse. La versión vigente estará siempre disponible
+      en esta página.
     </p>
   </main>
 </Layout>
 
 <style>
-  .legal h1 { font-size: 34px; margin-bottom: 18px; }
+  .legal h1 { font-size: 34px; margin-bottom: 10px; }
+  .update { font-size: 13px; color: #64748b; margin-bottom: 20px; }
   .legal h2 { margin-top: 22px; font-size: 20px; }
   .legal p, .legal li { line-height: 1.7; font-size: 15px; color: #334155; }
   .legal ul { margin-left: 18px; }
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .legal-table th, .legal-table td {
+    border: 1px solid #e2e8f0;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+  }
+  .legal-table th {
+    background: #f1f5f9;
+  }
 </style>
 
