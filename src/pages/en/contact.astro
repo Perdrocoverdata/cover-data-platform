@@ -1,1 +1,75 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact | CoverData" lang="en">
+  <main class="container legal">
+    <h1>Contact</h1>
+
+    <p>Request your free GDPR & AI compliance check.</p>
+
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form"
+    >
+      <!-- Required hidden field for Netlify -->
+      <input type="hidden" name="form-name" value="contact" />
+
+      <!-- Anti-spam -->
+      <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" required></textarea>
+      </label>
+
+      <!-- Legal checkbox -->
+      <label class="legal-check">
+        <input type="checkbox" name="privacy" required />
+        I have read and accept the
+        <a href="/en/privacy-policy" target="_blank">Privacy Policy</a>
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</Layout>
+
+<style>
+  .contact-form {
+    max-width: 520px;
+    margin-top: 20px;
+  }
+  .contact-form label {
+    display: block;
+    margin-bottom: 14px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+  }
+  .legal-check {
+    font-size: 13px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+</style>
 
