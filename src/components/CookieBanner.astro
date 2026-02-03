@@ -1,1 +1,153 @@
+<script>
+  const KEY = "coverdata_cookie_consent"; // accepted | rejected | null
+
+  function getLang() {
+    const p = window.location.pathname || "/";
+    return p.startsWith("/en") ? "en" : "es";
+  }
+
+  function t(lang) {
+    if (lang === "en") {
+      return {
+        text:
+          "We use technical cookies and, if you accept, analytics cookies to improve your experience. See our",
+        link: "Cookie Policy",
+        href: "/en/cookie-policy",
+        accept: "Accept",
+        reject: "Reject",
+      };
+    }
+    return {
+      text:
+        "Usamos cookies técnicas y, si aceptas, cookies analíticas para mejorar tu experiencia. Consulta nuestra",
+      link: "Política de Cookies",
+      href: "/es/cookies",
+      accept: "Aceptar",
+      reject: "Rechazar",
+    };
+  }
+
+  function showBanner() {
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.style.display = "block";
+  }
+
+  function hideBanner() {
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.remove();
+  }
+
+  // Expose consent value for other scripts (analytics gating)
+  function setConsent(value) {
+    localStorage.setItem(KEY, value);
+    window.__COOKIE_CONSENT__ = value;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const consent = localStorage.getItem(KEY);
+    window.__COOKIE_CONSENT__ = consent;
+
+    if (!consent) showBanner();
+
+    // Bind buttons (safe even if banner hidden)
+    const acceptBtn = document.getElementById("cookie-accept");
+    const rejectBtn = document.getElementById("cookie-reject");
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", () => {
+        setConsent("accepted");
+        hideBanner();
+        // notify for analytics init
+        window.dispatchEvent(new Event("cookie-consent-accepted"));
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener("click", () => {
+        setConsent("rejected");
+        hideBanner();
+      });
+    }
+
+    // Localize text
+    const lang = getLang();
+    const copy = t(lang);
+    const txt = document.getElementById("cookie-text");
+    const lnk = document.getElementById("cookie-link");
+    const a = document.getElementById("cookie-accept");
+    const r = document.getElementById("cookie-reject");
+
+    if (txt) txt.textContent = copy.text + " ";
+    if (lnk) {
+      lnk.textContent = copy.link;
+      lnk.setAttribute("href", copy.href);
+    }
+    if (a) a.textContent = copy.accept;
+    if (r) r.textContent = copy.reject;
+  });
+</script>
+
+<div id="cookie-banner" class="cookie" style="display:none">
+  <div class="cookie__body">
+    <p class="cookie__text">
+      <span id="cookie-text"></span><a id="cookie-link" href="/es/cookies"></a>.
+    </p>
+    <div class="cookie__actions">
+      <button id="cookie-accept" class="cookie__btn">Aceptar</button>
+      <button id="cookie-reject" class="cookie__btn cookie__btn--secondary">Rechazar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie{
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 9999;
+  }
+  .cookie__body{
+    max-width: 980px;
+    margin: 0 auto;
+    background: #071A33;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
+    padding: 14px 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .cookie__text{
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.9);
+  }
+  .cookie__text a{
+    color: #93c5fd;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .cookie__actions{
+    display: flex;
+    gap: 10px;
+  }
+  .cookie__btn{
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .cookie__btn--secondary{
+    background: #334155;
+    color: #fff;
+  }
+</style>
 
