@@ -142,11 +142,17 @@ const brand = {
     color:#0f172a;
   }
 
+.brandlogo{
+  height: 120px;   /* móvil / tablet */
+  width: auto;
+  display:block;
+}
+
+@media (min-width: 900px){
   .brandlogo{
-    height: 96px; /* logo grande */
-    width: auto;
-    display:block;
+    height: 148px; /* escritorio */
   }
+}
 
   @media (min-width: 900px){
     .brandlogo{ height: 112px; }
