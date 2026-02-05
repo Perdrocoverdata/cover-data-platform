@@ -1,131 +1,22 @@
----
-import Layout from "../../layouts/Layout.astro";
-
-const brand = {
-  name: "CoverData",
-  claim: "Cumplimiento RGPD & IA para empresas tecnológicas",
-  sub: "Acompañamos a startups y empresas tech en su adecuación al RGPD y al AI Act europeo, reduciendo riesgos legales y acelerando su crecimiento en Europa.",
-};
----
-
-<Layout title="CoverData — Consultoría RGPD & IA para empresas tecnológicas">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <header class="topbar">
-        <div class="brandbox">
-          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
-          <div class="brandtext">
-            <div class="brandname">{brand.name}</div>
-            <div class="brandsub">GDPR & AI Compliance</div>
-          </div>
-        </div>
-
-        <div class="lang">
-          <a href="/es/" class="active">ES</a>
-          <span class="sep">|</span>
-          <a href="/en/">EN</a>
-        </div>
-      </header>
-
-      <h1 class="h1">{brand.claim}</h1>
-      <p class="lead">{brand.sub}</p>
-
-      <div class="cta">
-        <a class="btn primary" href="/es/contacto">Solicitar diagnóstico gratuito</a>
-        <a class="btn ghost" href="/es/rgpd-ia">Ver servicios RGPD & IA</a>
-      </div>
-
-      <p class="micro">30 minutos • Sin compromiso • 100% confidencial</p>
-
-      <!-- SERVICES -->
-      <div class="cards">
-        <div class="card">
-          <div class="cardtitle">Auditoría RGPD</div>
-          <div class="cardtext">
-            Evaluación de riesgos, análisis de brechas y plan de adecuación legal.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="cardtitle">Cumplimiento IA</div>
-          <div class="cardtext">
-            Privacidad por diseño, DPIA y gobernanza de sistemas de IA.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="cardtitle">Expansión UE</div>
-          <div class="cardtext">
-            Transferencias internacionales, SCCs y gestión de proveedores.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section class="trust">
-    <div class="trust-wrap">
-      <span>Marco normativo europeo:</span>
-      <strong>RGPD</strong>
-      <strong>LOPDGDD</strong>
-      <strong>AI Act</strong>
-    </div>
-  </section>
-
-  <!-- HOW -->
-  <section class="how">
-    <div class="how-wrap">
-      <h2 class="how-h2">Cómo trabajamos</h2>
-      <p class="how-lead">
-        Un enfoque práctico y alineado con negocio: mitigamos riesgos legales sin frenar la innovación ni el desarrollo del producto.
-      </p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-title">1) Diagnóstico</div>
-          <div class="step-text">
-            Revisión de producto, datos, flujos y proveedores. Identificación de riesgos y quick wins.
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-title">2) Plan de adecuación</div>
-          <div class="step-text">
-            Roadmap legal, políticas, DPIA/PIA y medidas técnicas y organizativas.
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-title">3) Implementación</div>
-          <div class="step-text">
-            Acompañamiento con equipos legales y técnicos, con evidencias listas para auditoría.
-          </div>
-        </div>
-      </div>
-
-      <div class="final-cta">
-        <a class="btn primary" href="/es/contacto">Solicitar diagnóstico gratuito</a>
-        <a class="btn ghost" href="/es/rgpd-ia">Ver RGPD & IA</a>
-      </div>
-    </div>
-  </section>
-</Layout>
-
 <style>
 .hero{
   background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+  padding-bottom: 80px;
 }
+
 .wrap{
   max-width:1100px;
   margin:0 auto;
-  padding:72px 20px 64px;
+  padding:96px 20px 64px;
   color:#fff;
 }
+
 .topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
+
 .brandbox{
   display:flex;
   gap:16px;
@@ -133,23 +24,43 @@ const brand = {
   padding:16px 18px;
   border-radius:24px;
   color:#0f172a;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
+
 .brandlogo{
   height:96px;
 }
 @media (min-width:900px){
   .brandlogo{ height:112px; }
 }
+
 .brandname{ font-size:20px; font-weight:700; }
 .brandsub{ font-size:12px; color:#475569; }
-.h1{
-  margin-top:40px;
-  font-size:48px;
-  font-weight:700;
-}
-.lead{
-  margin-top:16px;
-  max-width:640px;
-  font-size:18px;
-  color:rgba
 
+.h1{
+  margin-top:48px;
+  font-size:52px;
+  font-weight:700;
+  line-height:1.15;
+}
+
+.lead{
+  margin-top:20px;
+  max-width:640px;
+  font-size:20px;
+  color:rgba(255,255,255,.88);
+  line-height:1.55;
+}
+
+.cta{ margin-top:28px; display:flex; gap:14px; }
+
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.primary{ background:#fff; color:#071A33; }
+.ghost{ border:1px solid rgba(255,255,255,.4);
