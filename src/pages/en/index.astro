@@ -3,13 +3,14 @@ import Layout from "../../layouts/Layout.astro";
 
 const brand = {
   name: "CoverData",
-  claim: "Tech & Data Compliance for global companies",
-  sub: "We help tech companies operate safely and GDPR-compliant across Europe.",
+  claim: "GDPR & AI compliance for tech companies",
+  sub: "We help technology-driven businesses comply with GDPR and reduce legal risks in data- and AI-based products, enabling secure operations and growth in Europe.",
   email: "info@cover-data.com",
 };
 ---
 
-<Layout title="CoverData — GDPR & AI Compliance" lang="en">
+<Layout title="CoverData — GDPR & AI Compliance Consulting">
+  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <header class="topbar">
@@ -31,54 +32,227 @@ const brand = {
       <h1 class="h1">{brand.claim}</h1>
       <p class="lead">{brand.sub}</p>
 
+      <!-- CTA -->
+      <div class="cta">
+        <a class="btn primary" href="/en/contact">Request a free assessment</a>
+        <a class="btn ghost" href="/en/gdpr-ai">View GDPR & AI services</a>
+      </div>
+
+      <p class="micro">
+        30 minutes • No commitment • 100% confidential
+      </p>
+
+      <!-- SERVICES -->
       <div class="cards">
         <div class="card">
-          <div class="cardtitle">GDPR Audit</div>
-          <div class="cardtext">Assessment, gap analysis, and remediation roadmap.</div>
+          <div class="cardtitle">GDPR Audit & Risk Assessment</div>
+          <div class="cardtext">
+            Gap analysis, risk evaluation and compliance roadmap for digital products.
+          </div>
         </div>
 
         <div class="card">
-          <div class="cardtitle">AI Compliance</div>
-          <div class="cardtext">DPIA, privacy by design, and data governance.</div>
+          <div class="cardtitle">AI Compliance & Governance</div>
+          <div class="cardtext">
+            DPIA, privacy by design and AI governance aligned with EU regulations.
+          </div>
         </div>
 
         <div class="card">
-          <div class="cardtitle">EU Expansion</div>
-          <div class="cardtext">International transfers, SCCs, and vendor compliance.</div>
+          <div class="cardtitle">EU Market Expansion</div>
+          <div class="cardtext">
+            International data transfers, SCCs and vendor compliance management.
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="contact">
-        Contact: <a href={`mailto:${brand.email}`}>{brand.email}</a>
-      </div>
+  <!-- TRUST BAR -->
+  <section class="trust">
+    <div class="trust-wrap">
+      <span>European regulatory framework:</span>
+      <strong>GDPR</strong>
+      <strong>Spanish Data Protection Law</strong>
+      <strong>EU AI Act</strong>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero{ background: linear-gradient(180deg, #071A33 0%, #0A2446 100%); overflow: hidden; }
-  .wrap{ max-width: 1100px; margin: 0 auto; padding: 72px 20px 64px; color: #fff; }
-  .topbar{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
-  .brandbox{ display:flex; align-items:center; gap:14px; background: rgba(255,255,255,0.95); border-radius: 22px; padding: 14px 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); color:#0f172a; }
-  .brandlogo{ height: 76px; width:auto; display:block; }
-  .brandname{ font-size: 20px; font-weight: 700; line-height: 1.1; }
-  .brandsub{ font-size: 12px; color: #475569; margin-top: 2px; }
-  .lang{ font-size: 14px; display:flex; align-items:center; gap:8px; opacity: 0.95; }
+  .hero{
+    background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+    overflow: hidden;
+  }
+
+  .wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 72px 20px 64px;
+    color: #fff;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+
+  .brandbox{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 22px;
+    padding: 14px 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    color:#0f172a;
+  }
+
+  .brandlogo{
+    height: 76px;
+    width: auto;
+    display:block;
+  }
+
+  .brandname{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .brandsub{
+    font-size: 12px;
+    color: #475569;
+    margin-top: 2px;
+  }
+
+  .lang{
+    font-size: 14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    opacity: 0.95;
+  }
   .lang a{ color:#fff; text-decoration:none; }
   .lang a:hover{ text-decoration:underline; }
   .lang .active{ font-weight:700; }
   .sep{ color: rgba(255,255,255,0.45); }
 
-  .h1{ margin-top: 38px; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; max-width: 920px; }
-  .lead{ margin-top: 16px; font-size: 18px; line-height: 1.6; max-width: 640px; color: rgba(255,255,255,0.88); }
+  .h1{
+    margin-top: 38px;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    max-width: 920px;
+  }
 
-  .cards{ margin-top: 34px; display:grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 900px){ .cards{ grid-template-columns: repeat(3, 1fr); } .h1{ font-size: 56px; } }
-  .card{ background:#fff; color:#0f172a; border-radius: 22px; padding: 18px 18px 16px; box-shadow: 0 14px 35px rgba(0,0,0,0.25); }
-  .cardtitle{ font-size: 18px; font-weight: 700; margin-bottom: 6px; }
-  .cardtext{ font-size: 14px; color:#334155; line-height: 1.55; }
+  .lead{
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 640px;
+    color: rgba(255,255,255,0.88);
+  }
 
-  .contact{ margin-top: 18px; font-size: 14px; color: rgba(255,255,255,0.85); }
-  .contact a{ color:#fff; text-decoration:underline; text-underline-offset: 3px; }
+  .cta{
+    margin-top: 18px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration:none;
+  }
+
+  .primary{
+    background:#fff;
+    color:#071A33;
+    box-shadow: 0 10px 26px rgba(0,0,0,.25);
+  }
+
+  .ghost{
+    border: 1px solid rgba(255,255,255,.35);
+    color:#fff;
+    background: rgba(255,255,255,.08);
+  }
+
+  .btn:hover{
+    transform: translateY(-1px);
+  }
+
+  .micro{
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,.78);
+  }
+
+  .cards{
+    margin-top: 34px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 900px){
+    .cards{ grid-template-columns: repeat(3, 1fr); }
+    .h1{ font-size: 56px; }
+  }
+
+  .card{
+    background: #fff;
+    color: #0f172a;
+    border-radius: 22px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+  }
+
+  .cardtitle{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .cardtext{
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  /* TRUST BAR */
+  .trust{
+    background: #06162b;
+    border-top: 1px solid rgba(255,255,255,.08);
+  }
+
+  .trust-wrap{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display:flex;
+    gap:16px;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    color: rgba(255,255,255,.85);
+    font-size: 13px;
+  }
+
+  .trust-wrap strong{
+    background: rgba(255,255,255,.1);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
 </style>
+
 
