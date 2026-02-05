@@ -31,6 +31,14 @@ const brand = {
 
       <h1 class="h1">{brand.claim}</h1>
       <p class="lead">{brand.sub}</p>
+      <div class="cta">
+      <a class="btn primary" href="/es/contacto">Solicitar diagnóstico gratuito</a>
+      <a class="btn ghost" href="/es/rgpd-ia">Ver servicios RGPD & IA</a>
+      </div>
+
+     <p class="micro">
+     30 minutos • Sin compromiso • 100% confidencial
+    </p>
 
       <div class="cards">
         <div class="card">
@@ -61,6 +69,43 @@ const brand = {
   .hero{
     background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
     overflow: hidden;
+.cta{
+  margin-top: 18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration:none;
+}
+
+.primary{
+  background:#fff;
+  color:#071A33;
+  box-shadow: 0 10px 26px rgba(0,0,0,.25);
+}
+
+.ghost{
+  border: 1px solid rgba(255,255,255,.35);
+  color:#fff;
+  background: rgba(255,255,255,.08);
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.micro{
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,.78);
+}
   }
 
   .wrap{
