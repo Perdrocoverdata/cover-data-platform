@@ -1,199 +1,113 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
-const mainServices = [
+const brand = {
+  name: "CoverData",
+  claim: "GDPR & AI Compliance for Tech Companies",
+  sub: "We help startups and technology companies comply with GDPR and the EU AI Act, reducing legal risks and accelerating their growth in Europe.",
+};
+
+const services = [
   {
     title: "GDPR Audit",
-    price: "from €490",
-    bullets: [
-      "Gap and risk analysis",
-      "Review of documentation and vendors",
-      "Prioritized compliance roadmap"
-    ]
+    text: "Risk assessment, gap analysis and compliance roadmap."
   },
   {
-    title: "AI Compliance / EU AI Act",
-    price: "from €390",
-    bullets: [
-      "System classification under the AI Act",
-      "Risk assessment and governance",
-      "Technical documentation and mandatory measures"
-    ]
+    title: "AI Compliance",
+    text: "Privacy by design, DPIA and AI governance."
   },
   {
-    title: "External Data Protection Officer (DPO)",
-    price: "from €90/month",
-    bullets: [
-      "Ongoing supervision",
-      "Handling data subject requests",
-      "Audit‑ready reports and evidence"
-    ]
+    title: "EU Expansion",
+    text: "International transfers, SCCs and vendor management."
   }
 ];
 
-const additionalServices = [
-  "Risk assessments",
-  "DPIA / PIA",
-  "ISO 27001",
-  "ENS (basic, medium, high)",
-  "Security incident management",
-  "International transfers & SCCs",
-  "Vendor and contract review",
-  "Policies and documentation",
-  "Internal training"
+const steps = [
+  {
+    title: "1) Assessment",
+    text: "Review of product, data flows and vendors. Identification of risks and quick wins."
+  },
+  {
+    title: "2) Compliance plan",
+    text: "Legal roadmap, policies, DPIA/PIA and technical & organizational measures."
+  },
+  {
+    title: "3) Implementation",
+    text: "Support for legal and technical teams with audit‑ready evidence."
+  }
+];
+
+const reasons = [
+  "Specialists in startups and tech companies",
+  "Compliance without slowing down innovation",
+  "Audit‑ready documentation",
+  "Legal + technical support",
+  "Transparent pricing",
+  "Fast response and ongoing support"
 ];
 ---
 
-<Layout title="GDPR & AI Compliance Services — CoverData">
+<Layout title="CoverData — GDPR & AI Compliance">
 
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <h1 class="h1">GDPR & AI Compliance Services</h1>
-      <p class="lead">
-        Practical, fast and business‑aligned compliance solutions for startups and tech companies operating in Europe.
-      </p>
+      <header class="topbar">
+        <div class="brandbox">
+          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
+          <div class="brandtext">
+            <div class="brandname">{brand.name}</div>
+            <div class="brandsub">GDPR & AI Compliance</div>
+          </div>
+        </div>
+
+        <div class="lang">
+          <a href="/es/">ES</a>
+          <span class="sep">|</span>
+          <a href="/en/" class="active">EN</a>
+        </div>
+      </header>
+
+      <h1 class="h1">{brand.claim}</h1>
+      <p class="lead">{brand.sub}</p>
 
       <div class="cta">
         <a class="btn primary" href="/en/contact">Request a free assessment</a>
+        <a class="btn ghost" href="/en/gdpr-ai">View GDPR & AI services</a>
+      </div>
+
+      <p class="micro">30 minutes • No commitment • 100% confidential</p>
+
+      <!-- SERVICES -->
+      <div class="cards">
+        {services.map(s => (
+          <div class="card">
+            <div class="cardtitle">{s.title}</div>
+            <div class="cardtext">{s.text}</div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- MAIN SERVICES -->
-  <section class="wrap section">
-    <h2 class="h2">Main services</h2>
-
-    <div class="cards">
-      {mainServices.map(s => (
-        <div class="card">
-          <div class="cardtitle">{s.title}</div>
-          <div class="cardprice">{s.price}</div>
-
-          <ul class="cardlist">
-            {s.bullets.map(b => <li>{b}</li>)}
-          </ul>
-        </div>
-      ))}
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="trust-wrap">
+      <span>European regulatory framework:</span>
+      <strong>GDPR</strong>
+      <strong>LOPDGDD</strong>
+      <strong>AI Act</strong>
     </div>
   </section>
 
-  <!-- ADDITIONAL SERVICES -->
-  <section class="wrap section">
-    <h2 class="h2">Additional services</h2>
+  <!-- HOW -->
+  <section class="how">
+    <div class="how-wrap">
+      <h2 class="how-h2">How we work</h2>
+      <p class="how-lead">
+        A practical, business‑aligned approach: we reduce legal risks without slowing down innovation or product development.
+      </p>
 
-    <ul class="list">
-      {additionalServices.map(item => <li>{item}</li>)}
-    </ul>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="cta-final">
-    <div class="wrap">
-      <h2 class="cta-title">Need help with GDPR or AI compliance?</h2>
-      <p class="cta-sub">Book a 30‑minute call. No commitment.</p>
-      <a class="btn primary" href="/en/contact">Request a free assessment</a>
-    </div>
-  </section>
-
-</Layout>
-
-<style>
-/* HERO */
-.hero{
-  background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
-  padding: 80px 0;
-  color: #fff;
-}
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 20px;
-}
-.h1{
-  font-size:48px;
-  font-weight:700;
-  margin-bottom:16px;
-}
-.lead{
-  max-width:640px;
-  font-size:20px;
-  color:rgba(255,255,255,.85);
-  line-height:1.55;
-}
-.cta{
-  margin-top:24px;
-}
-.btn{
-  padding:12px 20px;
-  border-radius:12px;
-  font-weight:700;
-  text-decoration:none;
-  font-size:16px;
-}
-.primary{ background:#fff; color:#071A33; }
-
-/* SECTIONS */
-.section{
-  padding:64px 0;
-  color:#fff;
-}
-.h2{
-  font-size:32px;
-  font-weight:700;
-  margin-bottom:24px;
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  gap:20px;
-}
-@media(min-width:900px){
-  .cards{ grid-template-columns:repeat(3,1fr); }
-}
-.card{
-  background:#fff;
-  color:#0f172a;
-  padding:24px;
-  border-radius:20px;
-  box-shadow:0 6px 16px rgba(0,0,0,.12);
-}
-.cardtitle{
-  font-size:20px;
-  font-weight:700;
-}
-.cardprice{
-  margin:6px 0 12px;
-  font-weight:600;
-  color:#0A2446;
-}
-.cardlist{
-  margin-top:12px;
-  line-height:1.55;
-}
-
-/* ADDITIONAL SERVICES */
-.list{
-  line-height:1.7;
-  font-size:18px;
-}
-
-/* FINAL CTA */
-.cta-final{
-  background:#071A33;
-  padding:64px 0;
-  text-align:center;
-  color:#fff;
-}
-.cta-title{
-  font-size:32px;
-  font-weight:700;
-}
-.cta-sub{
-  margin-top:8px;
-  margin-bottom:20px;
-  color:rgba(255,255,255,.85);
-}
-</style>
+      <div class="steps">
+        {steps.map
 
