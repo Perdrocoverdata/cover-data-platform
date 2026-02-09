@@ -109,5 +109,14 @@ const reasons = [
       </p>
 
       <div class="steps">
-        {steps.map
+  {steps.map(step => (
+    <div class="step">
+      <div class="step-title">{step.title}</div>
+      <div class="step-text">{step.text}</div>
+    </div>
+  ))}
+</div>
+    </div>
+  </section>
 
+</Layout>
