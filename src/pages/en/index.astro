@@ -1,4 +1,3 @@
-
 ---
 import Layout from "../../layouts/Layout.astro";
 
@@ -11,15 +10,30 @@ const brand = {
 const services = [
   {
     title: "GDPR Audit",
-    text: "Risk assessment, gap analysis and compliance roadmap."
+    price: "from 490 €",
+    bullets: [
+      "Gap and risk analysis",
+      "Review of documentation and vendors",
+      "Prioritized compliance roadmap"
+    ]
   },
   {
-    title: "AI Compliance",
-    text: "Privacy by design, DPIA and AI governance."
+    title: "AI Compliance / EU AI Act",
+    price: "from 390 €",
+    bullets: [
+      "System classification under the AI Act",
+      "Risk assessment and governance framework",
+      "Technical documentation and mandatory measures"
+    ]
   },
   {
-    title: "EU Expansion",
-    text: "International transfers, SCCs and vendor management."
+    title: "External Data Protection Officer (DPO)",
+    price: "from 90 €/month",
+    bullets: [
+      "Ongoing supervision and monitoring",
+      "Handling data subject requests",
+      "Audit‑ready reports and evidence"
+    ]
   }
 ];
 
@@ -84,7 +98,12 @@ const reasons = [
         {services.map(s => (
           <div class="card">
             <div class="cardtitle">{s.title}</div>
-            <div class="cardtext">{s.text}</div>
+            <div class="cardprice">{s.price}</div>
+            <ul class="cardlist">
+              {s.bullets.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
@@ -317,10 +336,18 @@ const reasons = [
   color:var(--primary);
 }
 
-.cardtext{
-  margin-top:12px;
-  line-height:1.65;
-  font-size:17px;
+.cardprice{
+  margin-top:8px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--accent2);
+}
+
+.cardlist{
+  margin-top:14px;
+  padding-left:18px;
+  line-height:1.6;
+  font-size:16px;
 }
 
 /* TRUST */
