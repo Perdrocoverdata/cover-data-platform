@@ -125,13 +125,13 @@ const reasons = [
     <div class="how-wrap">
       <h2 class="how-h2">How we work</h2>
       <p class="how-lead">
-        A practical, business‑aligned approach: we reduce legal risks without slowing down innovation or product development.
+        <strong>A practical, business‑aligned approach:</strong> we reduce legal risks without slowing down innovation or product development.
       </p>
 
       <div class="steps">
         {steps.map(step => (
           <div class="step">
-            <div class="step-title">{step.title}</div>
+            <div class="step-title"><strong>{step.title}</strong></div>
             <div class="step-text">{step.text}</div>
           </div>
         ))}
@@ -145,7 +145,7 @@ const reasons = [
       <h2 class="why-h2">Why choose us</h2>
 
       <ul class="why-list">
-        {reasons.map(r => <li>{r}</li>)}
+        {reasons.map(r => <li><strong>{r}</strong></li>)}
       </ul>
     </div>
   </section>
@@ -163,7 +163,7 @@ const reasons = [
         <article class="insight-card">
           <h3 class="insight-title">AEPD: Key Principles for AI Systems</h3>
           <p class="insight-text">
-            The AEPD highlights transparency, risk assessment, and data minimization as essential pillars for AI governance. These principles help companies align with GDPR and the upcoming EU AI Act.
+            The AEPD highlights transparency, risk assessment, and data minimization as essential pillars for AI governance.
           </p>
           <a href="https://www.aepd.es" target="_blank" class="insight-link">Read more</a>
         </article>
@@ -171,7 +171,7 @@ const reasons = [
         <article class="insight-card">
           <h3 class="insight-title">EDPB Guidelines on International Transfers</h3>
           <p class="insight-text">
-            The EDPB provides practical recommendations for assessing third‑country risks and implementing supplementary measures when using cloud or SaaS providers outside the EU.
+            The EDPB provides practical recommendations for assessing third‑country risks and implementing supplementary measures.
           </p>
           <a href="https://edpb.europa.eu" target="_blank" class="insight-link">Read more</a>
         </article>
@@ -179,7 +179,7 @@ const reasons = [
         <article class="insight-card">
           <h3 class="insight-title">AEPD: Best Practices for DPIAs</h3>
           <p class="insight-text">
-            The AEPD’s DPIA guidance outlines when impact assessments are mandatory and how to evaluate high‑risk processing activities effectively.
+            The AEPD’s DPIA guidance outlines when impact assessments are mandatory and how to evaluate high‑risk processing activities.
           </p>
           <a href="https://www.aepd.es" target="_blank" class="insight-link">Read more</a>
         </article>
@@ -200,6 +200,13 @@ const reasons = [
 </Layout>
 
 <style>
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 /* GENERAL */
 :root{
   --primary:#071A33;
@@ -367,65 +374,85 @@ const reasons = [
 
 /* HOW */
 .how{
-  padding:90px 0;
+  padding:100px 0;
   background:#f4f8ff;
 }
 
 .how-h2{
-  font-size:38px;
+  font-size:40px;
   font-weight:800;
+  margin-bottom:20px;
   color:var(--primary);
 }
 
 .how-lead{
-  margin-top:20px;
+  margin-top:24px;
   max-width:680px;
   line-height:1.75;
-  font-size:20px;
+  font-size:21px;
+  font-weight:500;
+  color:#334155;
 }
 
 .steps{
-  margin-top:48px;
+  margin-top:50px;
   display:grid;
-  gap:28px;
+  gap:32px;
 }
 
 .step{
   background:#fff;
-  padding:32px;
+  padding:36px;
   border-radius:20px;
-  border-left:5px solid var(--accent2);
-  box-shadow:0 6px 16px rgba(0,0,0,.1);
+  border-left:6px solid var(--accent);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .step-title{
   font-size:22px;
   font-weight:700;
   color:var(--primary);
+  margin-bottom:6px;
 }
 
 .step-text{
-  margin-top:12px;
-  line-height:1.65;
-  font-size:17px;
+  font-size:18px;
+  line-height:1.7;
+  color:#475569;
 }
 
 /* WHY */
 .why{
-  padding:90px 0;
+  padding:100px 0;
 }
 
 .why-h2{
-  font-size:38px;
+  font-size:40px;
   font-weight:800;
   color:var(--primary);
 }
 
 .why-list{
-  margin-top:28px;
-  line-height:1.8;
+  margin-top:32px;
+  line-height:1.85;
   font-size:20px;
   max-width:720px;
+}
+
+.why-list li{
+  margin-bottom:12px;
+  padding-left:22px;
+  position:relative;
+}
+
+.why-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--accent);
+  font-size:26px;
+  line-height:20px;
 }
 
 /* INSIGHTS */
@@ -521,3 +548,4 @@ const reasons = [
   color:rgba(255,255,255,.85);
 }
 </style>
+
