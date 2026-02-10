@@ -109,14 +109,200 @@ const reasons = [
       </p>
 
       <div class="steps">
-  {steps.map(step => (
-    <div class="step">
-      <div class="step-title">{step.title}</div>
-      <div class="step-text">{step.text}</div>
+        {steps.map(step => (
+          <div class="step">
+            <div class="step-title">{step.title}</div>
+            <div class="step-text">{step.text}</div>
+          </div>
+        ))}
+      </div>
     </div>
-  ))}
-</div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="why-wrap">
+      <h2 class="why-h2">Why choose us</h2>
+
+      <ul class="why-list">
+        {reasons.map(r => <li>{r}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="cta-wrap">
+      <h2 class="cta-title">Need help with GDPR or AI compliance?</h2>
+      <p class="cta-sub">Book a 30‑minute meeting. No commitment.</p>
+      <a class="btn primary" href="/en/contact">Request a free assessment</a>
     </div>
   </section>
 
 </Layout>
+
+<style>
+.hero{
+  background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+  padding: 80px 0;
+  color: #fff;
+}
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+.brandbox{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.brandlogo{
+  height:96px;
+}
+.brandname{
+  font-size:24px;
+  font-weight:700;
+}
+.brandsub{
+  font-size:14px;
+  opacity:.8;
+}
+.lang a{
+  color:#fff;
+  text-decoration:none;
+}
+.lang .active{
+  font-weight:700;
+}
+.h1{
+  font-size:48px;
+  font-weight:700;
+  margin-bottom:16px;
+}
+.lead{
+  max-width:640px;
+  font-size:20px;
+  color:rgba(255,255,255,.85);
+  line-height:1.55;
+}
+.cta{
+  margin-top:24px;
+  display:flex;
+  gap:12px;
+}
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:16px;
+}
+.primary{ background:#fff; color:#071A33; }
+.ghost{ border:2px solid #fff; color:#fff; }
+.micro{
+  margin-top:12px;
+  font-size:14px;
+  opacity:.8;
+}
+
+/* SERVICES */
+.cards{
+  margin-top:40px;
+  display:grid;
+  gap:20px;
+}
+@media(min-width:900px){
+  .cards{ grid-template-columns:repeat(3,1fr); }
+}
+.card{
+  background:#fff;
+  color:#0f172a;
+  padding:24px;
+  border-radius:20px;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+}
+.cardtitle{
+  font-size:20px;
+  font-weight:700;
+}
+.cardtext{
+  margin-top:8px;
+  line-height:1.55;
+}
+
+/* TRUST */
+.trust{
+  background:#fff;
+  padding:40px 0;
+  text-align:center;
+}
+.trust-wrap strong{
+  margin:0 8px;
+}
+
+/* HOW */
+.how{
+  padding:64px 0;
+  background:#f8fafc;
+}
+.how-h2{
+  font-size:32px;
+  font-weight:700;
+}
+.how-lead{
+  margin-top:12px;
+  max-width:600px;
+  line-height:1.6;
+}
+.steps{
+  margin-top:32px;
+  display:grid;
+  gap:20px;
+}
+.step-title{
+  font-size:20px;
+  font-weight:700;
+}
+.step-text{
+  margin-top:8px;
+  line-height:1.6;
+}
+
+/* WHY */
+.why{
+  padding:64px 0;
+}
+.why-h2{
+  font-size:32px;
+  font-weight:700;
+}
+.why-list{
+  margin-top:20px;
+  line-height:1.7;
+  font-size:18px;
+}
+
+/* CTA FINAL */
+.cta-final{
+  background:#071A33;
+  padding:64px 0;
+  text-align:center;
+  color:#fff;
+}
+.cta-title{
+  font-size:32px;
+  font-weight:700;
+}
+.cta-sub{
+  margin-top:8px;
+  margin-bottom:20px;
+  color:rgba(255,255,255,.85);
+}
+</style>
