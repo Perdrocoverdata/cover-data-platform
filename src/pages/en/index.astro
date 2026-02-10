@@ -200,11 +200,19 @@ const reasons = [
 </Layout>
 
 <style>
-/* IMPORT FONT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap');
 
-body {
+body, html {
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, .h1, .how-h2, .why-h2, .insights-h2 {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 /* GENERAL */
@@ -218,7 +226,7 @@ body {
 /* HERO */
 .hero{
   background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
-  padding: 120px 0 100px;
+  padding: 140px 0 110px;
   color: #fff;
 }
 
@@ -232,33 +240,33 @@ body {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:56px;
+  margin-bottom:60px;
 }
 
 .brandbox{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:28px;
 }
 
 .brandlogo{
-  height:150px;
+  height:200px; /* LOGO MÁS GRANDE */
 }
 
 .brandname{
-  font-size:34px;
+  font-size:38px;
   font-weight:800;
 }
 
 .brandsub{
-  font-size:16px;
+  font-size:17px;
   opacity:.85;
 }
 
 .lang a{
   color:#fff;
   text-decoration:none;
-  font-size:17px;
+  font-size:18px;
 }
 .lang .active{
   font-weight:700;
@@ -266,29 +274,29 @@ body {
 }
 
 .h1{
-  font-size:58px;
+  font-size:64px;
   font-weight:800;
-  margin-bottom:24px;
+  margin-bottom:28px;
   max-width:820px;
-  line-height:1.2;
+  line-height:1.15;
 }
 
 .lead{
-  max-width:720px;
-  font-size:23px;
+  max-width:760px;
+  font-size:24px;
   color:rgba(255,255,255,.9);
-  line-height:1.65;
-  margin-top:20px;
+  line-height:1.7;
+  margin-top:24px;
 }
 
 .cta{
-  margin-top:36px;
+  margin-top:40px;
   display:flex;
-  gap:18px;
+  gap:20px;
 }
 
 .btn{
-  padding:16px 26px;
+  padding:18px 30px;
   border-radius:16px;
   font-weight:700;
   text-decoration:none;
@@ -306,16 +314,16 @@ body {
 }
 
 .micro{
-  margin-top:20px;
+  margin-top:24px;
   font-size:16px;
   opacity:.85;
 }
 
 /* SERVICES */
 .cards{
-  margin-top:56px;
+  margin-top:60px;
   display:grid;
-  gap:28px;
+  gap:32px;
 }
 
 @media(min-width:900px){
@@ -325,71 +333,70 @@ body {
 .card{
   background:#fff;
   color:#0f172a;
-  padding:36px 32px;
+  padding:40px 36px;
   border-radius:24px;
   border:2px solid var(--accent);
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .card:hover{
   transform:translateY(-4px);
-  box-shadow:0 12px 28px rgba(0,0,0,.18);
+  box-shadow:0 14px 32px rgba(0,0,0,.18);
 }
 
 .cardtitle{
-  font-size:22px;
+  font-size:24px;
   font-weight:800;
   color:var(--primary);
 }
 
 .cardprice{
-  margin-top:8px;
-  font-size:18px;
+  margin-top:10px;
+  font-size:19px;
   font-weight:700;
   color:var(--accent2);
 }
 
 .cardlist{
-  margin-top:14px;
-  padding-left:18px;
-  line-height:1.6;
-  font-size:16px;
+  margin-top:16px;
+  padding-left:20px;
+  line-height:1.7;
+  font-size:17px;
 }
 
 /* TRUST */
 .trust{
   background:#fff;
-  padding:56px 0;
+  padding:60px 0;
   text-align:center;
   border-top:4px solid var(--accent);
   border-bottom:4px solid var(--accent2);
 }
 
 .trust-wrap strong{
-  margin:0 12px;
-  font-size:19px;
+  margin:0 14px;
+  font-size:20px;
   color:var(--primary);
 }
 
 /* HOW */
 .how{
-  padding:100px 0;
+  padding:120px 0;
   background:#f4f8ff;
 }
 
 .how-h2{
-  font-size:40px;
-  font-weight:800;
-  margin-bottom:20px;
+  font-size:42px;
+  margin-bottom:24px;
   color:var(--primary);
 }
 
 .how-lead{
-  margin-top:24px;
-  max-width:680px;
-  line-height:1.75;
-  font-size:21px;
+  margin-top:28px;
+  max-width:720px;
+  line-height:1.8;
+  font-size:22px;
   font-weight:500;
   color:#334155;
 }
@@ -397,51 +404,51 @@ body {
 .steps{
   margin-top:50px;
   display:grid;
-  gap:32px;
+  gap:36px;
 }
 
 .step{
   background:#fff;
-  padding:36px;
+  padding:40px;
   border-radius:20px;
   border-left:6px solid var(--accent);
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
 }
 
 .step-title{
-  font-size:22px;
+  font-size:24px;
   font-weight:700;
   color:var(--primary);
-  margin-bottom:6px;
+  margin-bottom:10px;
 }
 
 .step-text{
-  font-size:18px;
-  line-height:1.7;
+  font-size:19px;
+  line-height:1.75;
   color:#475569;
 }
 
 /* WHY */
 .why{
-  padding:100px 0;
+  padding:120px 0;
 }
 
 .why-h2{
-  font-size:40px;
+  font-size:42px;
   font-weight:800;
   color:var(--primary);
 }
 
 .why-list{
-  margin-top:32px;
-  line-height:1.85;
-  font-size:20px;
-  max-width:720px;
+  margin-top:36px;
+  line-height:1.9;
+  font-size:21px;
+  max-width:760px;
 }
 
 .why-list li{
-  margin-bottom:12px;
-  padding-left:22px;
+  margin-bottom:14px;
+  padding-left:24px;
   position:relative;
 }
 
@@ -451,13 +458,13 @@ body {
   left:0;
   top:0;
   color:var(--accent);
-  font-size:26px;
+  font-size:28px;
   line-height:20px;
 }
 
 /* INSIGHTS */
 .insights{
-  padding:80px 0;
+  padding:90px 0;
   background:#ffffff;
 }
 
@@ -468,23 +475,23 @@ body {
 }
 
 .insights-h2{
-  font-size:38px;
+  font-size:40px;
   font-weight:800;
   color:var(--primary);
 }
 
 .insights-lead{
-  margin-top:16px;
-  max-width:700px;
-  font-size:20px;
-  line-height:1.7;
+  margin-top:20px;
+  max-width:720px;
+  font-size:21px;
+  line-height:1.75;
   color:#334155;
 }
 
 .insights-grid{
-  margin-top:40px;
+  margin-top:44px;
   display:grid;
-  gap:28px;
+  gap:32px;
 }
 
 @media(min-width:900px){
@@ -495,34 +502,34 @@ body {
 
 .insight-card{
   background:#f8fafc;
-  padding:28px;
+  padding:32px;
   border-radius:20px;
   border:2px solid var(--accent);
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
   transition:transform .2s ease, box-shadow .2s ease;
 }
 
 .insight-card:hover{
   transform:translateY(-4px);
-  box-shadow:0 12px 24px rgba(0,0,0,.12);
+  box-shadow:0 14px 28px rgba(0,0,0,.12);
 }
 
 .insight-title{
-  font-size:20px;
+  font-size:22px;
   font-weight:700;
   color:var(--primary);
 }
 
 .insight-text{
-  margin-top:10px;
-  font-size:17px;
-  line-height:1.6;
+  margin-top:12px;
+  font-size:18px;
+  line-height:1.7;
   color:#475569;
 }
 
 .insight-link{
   display:inline-block;
-  margin-top:14px;
+  margin-top:16px;
   font-weight:700;
   color:var(--accent);
   text-decoration:none;
@@ -531,20 +538,20 @@ body {
 /* CTA FINAL */
 .cta-final{
   background:var(--primary);
-  padding:90px 0;
+  padding:100px 0;
   text-align:center;
   color:#fff;
   border-top:6px solid var(--accent);
 }
 
 .cta-title{
-  font-size:38px;
+  font-size:42px;
   font-weight:800;
 }
 
 .cta-sub{
-  margin-top:14px;
-  margin-bottom:32px;
+  margin-top:16px;
+  margin-bottom:36px;
   color:rgba(255,255,255,.85);
 }
 </style>
