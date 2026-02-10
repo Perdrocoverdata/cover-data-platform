@@ -1,9 +1,153 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const brand = {
+  name: "CoverData",
+  claim: "GDPR & AI Compliance for Tech Companies",
+  sub: "We help startups and technology companies comply with GDPR and the EU AI Act, reducing legal risks and accelerating their growth in Europe."
+};
+
+const services = [
+  {
+    title: "GDPR Audit",
+    text: "Risk assessment, gap analysis and compliance roadmap."
+  },
+  {
+    title: "AI Compliance",
+    text: "Privacy by design, DPIA and AI governance."
+  },
+  {
+    title: "EU Expansion",
+    text: "International transfers, SCCs and vendor management."
+  }
+];
+
+const steps = [
+  {
+    title: "1) Assessment",
+    text: "Review of product, data flows and vendors. Identification of risks and quick wins."
+  },
+  {
+    title: "2) Compliance plan",
+    text: "Legal roadmap, policies, DPIA/PIA and technical & organizational measures."
+  },
+  {
+    title: "3) Implementation",
+    text: "Support for legal and technical teams with audit‑ready evidence."
+  }
+];
+
+const reasons = [
+  "Specialists in startups and tech companies",
+  "Compliance without slowing down innovation",
+  "Audit‑ready documentation",
+  "Legal + technical support",
+  "Transparent pricing",
+  "Fast response and ongoing support"
+];
+---
+
+<Layout title="CoverData — GDPR & AI Compliance">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <header class="topbar">
+        <div class="brandbox">
+          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
+          <div class="brandtext">
+            <div class="brandname">{brand.name}</div>
+            <div class="brandsub">GDPR & AI Compliance</div>
+          </div>
+        </div>
+
+        <div class="lang">
+          <a href="/es/">ES</a>
+          <span class="sep">|</span>
+          <a href="/en/" class="active">EN</a>
+        </div>
+      </header>
+
+      <h1 class="h1">{brand.claim}</h1>
+      <p class="lead">{brand.sub}</p>
+
+      <div class="cta">
+        <a class="btn primary" href="/en/contact">Request a free assessment</a>
+        <a class="btn ghost" href="/en/gdpr-ai">View GDPR & AI services</a>
+      </div>
+
+      <p class="micro">30 minutes • No commitment • 100% confidential</p>
+
+      <!-- SERVICES -->
+      <div class="cards">
+        {services.map(s => (
+          <div class="card">
+            <div class="cardtitle">{s.title}</div>
+            <div class="cardtext">{s.text}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="trust-wrap">
+      <span>European regulatory framework:</span>
+      <strong>GDPR</strong>
+      <strong>LOPDGDD</strong>
+      <strong>AI Act</strong>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="how">
+    <div class="how-wrap">
+      <h2 class="how-h2">How we work</h2>
+      <p class="how-lead">
+        A practical, business‑aligned approach: we reduce legal risks without slowing down innovation or product development.
+      </p>
+
+      <div class="steps">
+        {steps.map(step => (
+          <div class="step">
+            <div class="step-title">{step.title}</div>
+            <div class="step-text">{step.text}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="why-wrap">
+      <h2 class="why-h2">Why choose us</h2>
+
+      <ul class="why-list">
+        {reasons.map(r => <li>{r}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="cta-wrap">
+      <h2 class="cta-title">Need help with GDPR or AI compliance?</h2>
+      <p class="cta-sub">Book a 30‑minute meeting. No commitment.</p>
+      <a class="btn primary" href="/en/contact">Request a free assessment</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
 /* GENERAL */
 :root{
   --primary:#071A33;
   --secondary:#0A2446;
-  --accent:#1EC6D7;      /* Turquesa elegante */
-  --accent2:#7A5FFF;     /* Morado suave */
+  --accent:#1EC6D7;
+  --accent2:#7A5FFF;
 }
 
 .hero{
@@ -234,3 +378,5 @@
   margin-bottom:28px;
   color:rgba(255,255,255,.85);
 }
+</style>
+
