@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 
 <Layout title="Contacto — CoverData">
 
-  <!-- HERO -->
+  <!-- HERO EN BLANCO -->
   <section class="hero">
     <div class="wrap">
       <h1 class="h1">Contacto</h1>
@@ -15,7 +15,7 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <!-- FORM NUEVO DISEÑO -->
+  <!-- FORMULARIO -->
   <section class="contact-section">
     <div class="contact-card">
       <form action="https://api.web3forms.com/submit" method="POST">
@@ -27,22 +27,22 @@ import Layout from "../../layouts/Layout.astro";
         <input type="checkbox" name="botcheck" style="display:none;" />
 
         <label>
-          <span>👤 Nombre</span>
+          Nombre
           <input type="text" name="name" required />
         </label>
 
         <label>
-          <span>📧 Email</span>
+          Email
           <input type="email" name="email" required />
         </label>
 
         <label>
-          <span>🏢 Empresa</span>
+          Empresa
           <input type="text" name="company" />
         </label>
 
         <label>
-          <span>💬 Mensaje</span>
+          Mensaje
           <textarea name="message" rows="5" required></textarea>
         </label>
 
@@ -58,10 +58,10 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 
 <style>
-/* HERO */
+/* HERO EN BLANCO */
 .hero{
-  background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
-  padding: 80px 0;
+  background:white;
+  padding:80px 0;
   color:#071A33;
 }
 .wrap{
@@ -72,16 +72,17 @@ import Layout from "../../layouts/Layout.astro";
 .h1{
   font-size:42px;
   font-weight:700;
+  color:#071A33;
 }
 .lead{
   margin-top:12px;
   max-width:500px;
-  color:rgba(255,255,255,.85);
+  color:#071A33;
   line-height:1.55;
   font-size:20px;
 }
 
-/* FORMULARIO NUEVO */
+/* FORMULARIO */
 .contact-section{
   background:white;
   padding:64px 20px;
