@@ -17,10 +17,17 @@ import Layout from "../../layouts/Layout.astro";
 
   <!-- FORM -->
   <section class="wrap form-section">
-    <form class="form" action="https://formspree.io/f/mwkggkqk" method="POST">
+    <form class="form" action="https://api.web3forms.com/submit" method="POST">
+
+      <!-- Web3Forms required -->
+      <input type="hidden" name="access_key" value="560278c0-a113-46f8-b40d-61c34653f23e" />
+      <input type="hidden" name="from_name" value="Cover Data Website" />
+      <input type="hidden" name="subject" value="Nuevo mensaje desde el formulario de contacto" />
+      <input type="checkbox" name="botcheck" style="display:none;" />
+
       <label>
         Nombre
-        <input type="text" name="nombre" required />
+        <input type="text" name="name" required />
       </label>
 
       <label>
@@ -30,12 +37,12 @@ import Layout from "../../layouts/Layout.astro";
 
       <label>
         Empresa
-        <input type="text" name="empresa" />
+        <input type="text" name="company" />
       </label>
 
       <label>
         Mensaje
-        <textarea name="mensaje" rows="5" required></textarea>
+        <textarea name="message" rows="5" required></textarea>
       </label>
 
       <button type="submit" class="btn primary">Enviar mensaje</button>
