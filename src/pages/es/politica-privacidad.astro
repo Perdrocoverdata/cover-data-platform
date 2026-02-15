@@ -119,6 +119,97 @@ const today = new Date().toLocaleDateString("es-ES");
       Esta política puede actualizarse. La versión vigente estará siempre disponible
       en esta página.
     </p>
+
+    <!-- NUEVA SECCIÓN AÑADIDA -->
+    <h2>12. Registro de Actividades de Tratamiento (Art. 30 RGPD)</h2>
+    <p>
+      CoverData mantiene un Registro de Actividades de Tratamiento conforme al RGPD y, cuando
+      resulte aplicable, al Reglamento Europeo de Inteligencia Artificial.
+    </p>
+
+    <div class="table-wrapper">
+      <table class="legal-table wide">
+        <thead>
+          <tr>
+            <th>Tratamiento</th>
+            <th>Finalidad</th>
+            <th>Base jurídica</th>
+            <th>Datos tratados</th>
+            <th>Interesados</th>
+            <th>Destinatarios</th>
+            <th>Transferencias</th>
+            <th>Conservación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Gestión de clientes</td>
+            <td>Prestación del servicio, soporte, facturación</td>
+            <td>Art. 6.1.b) Ejecución de contrato</td>
+            <td>Identificativos, contacto, uso del servicio</td>
+            <td>Clientes</td>
+            <td>Proveedores cloud, administración tributaria</td>
+            <td>No previstas</td>
+            <td>6 años</td>
+          </tr>
+
+          <tr>
+            <td>Marketing</td>
+            <td>Envío de newsletters y comunicaciones</td>
+            <td>Art. 6.1.a) Consentimiento</td>
+            <td>Identificativos, contacto</td>
+            <td>Usuarios suscritos</td>
+            <td>Plataformas de email marketing</td>
+            <td>Posibles (EE.UU.) con garantías</td>
+            <td>Hasta revocación</td>
+          </tr>
+
+          <tr>
+            <td>Proveedores</td>
+            <td>Gestión contractual y fiscal</td>
+            <td>Art. 6.1.b) Ejecución de contrato</td>
+            <td>Identificativos, financieros</td>
+            <td>Proveedores</td>
+            <td>Administración tributaria</td>
+            <td>No previstas</td>
+            <td>6 años</td>
+          </tr>
+
+          <tr>
+            <td>Seguridad</td>
+            <td>Control de accesos, logs, incidentes</td>
+            <td>Art. 6.1.f) Interés legítimo</td>
+            <td>IPs, logs, identificadores técnicos</td>
+            <td>Usuarios y visitantes</td>
+            <td>Proveedores tecnológicos</td>
+            <td>No previstas</td>
+            <td>12 meses</td>
+          </tr>
+
+          <tr>
+            <td>Cumplimiento normativo</td>
+            <td>DPIAs, auditorías, gestión de derechos</td>
+            <td>Art. 6.1.c) Obligación legal</td>
+            <td>Identificativos, documentación legal</td>
+            <td>Usuarios y clientes</td>
+            <td>Autoridades de control</td>
+            <td>No previstas</td>
+            <td>Según normativa</td>
+          </tr>
+
+          <tr>
+            <td>Analítica web</td>
+            <td>Medición de tráfico y rendimiento</td>
+            <td>Art. 6.1.a) Consentimiento</td>
+            <td>Identificadores online, navegación</td>
+            <td>Visitantes</td>
+            <td>Herramientas de analítica</td>
+            <td>Posibles (EE.UU.) con garantías</td>
+            <td>24 meses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 </Layout>
 
@@ -128,19 +219,34 @@ const today = new Date().toLocaleDateString("es-ES");
   .legal h2 { margin-top: 22px; font-size: 20px; }
   .legal p, .legal li { line-height: 1.7; font-size: 15px; color: #334155; }
   .legal ul { margin-left: 18px; }
+
+  .table-wrapper { overflow-x: auto; margin-top: 15px; }
+
   .legal-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-  }
-  .legal-table th, .legal-table td {
-    border: 1px solid #e2e8f0;
-    padding: 8px;
-    text-align: left;
     font-size: 14px;
   }
+
+  .legal-table th, .legal-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
   .legal-table th {
     background: #f1f5f9;
+    font-weight: 600;
+  }
+
+  .legal-table.wide td {
+    font-size: 13px;
+  }
+
+  tr:nth-child(even) {
+    background: #fafafa;
   }
 </style>
 
