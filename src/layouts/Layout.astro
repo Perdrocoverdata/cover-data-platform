@@ -1,36 +1,58 @@
-<header class="cd-header">
-  <nav class="cd-menu">
-    <ul>
-      <li><a href="/es/">Inicio</a></li>
+---
+const { title } = Astro.props;
+---
 
-      <li class="submenu">
-        <a href="#">Servicios</a>
-        <ul class="children">
-          <li><a href="/es/rgpd-ia">Delegado de Protección de Datos</a></li>
-          <li><a href="#">ISO 27001</a></li>
-          <li><a href="#">ISO 31000</a></li>
-          <li><a href="#">DORA</a></li>
-          <li><a href="#">Reglamento de IA</a></li>
-          <li><a href="#">RGPD Compliance</a></li>
-          <li><a href="#">Sectores</a></li>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title ? `${title} | Cover Data` : "Cover Data"}</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER INSERTADO AQUÍ -->
+    <header class="cd-header">
+      <nav class="cd-menu">
+        <ul>
+          <li><a href="/es/">Inicio</a></li>
+
+          <li class="submenu">
+            <a href="#">Servicios</a>
+            <ul class="children">
+              <li><a href="/es/rgpd-ia">Delegado de Protección de Datos</a></li>
+              <li><a href="#">ISO 27001</a></li>
+              <li><a href="#">ISO 31000</a></li>
+              <li><a href="#">DORA</a></li>
+              <li><a href="#">Reglamento de IA</a></li>
+              <li><a href="#">RGPD Compliance</a></li>
+              <li><a href="#">Sectores</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/es/por-que-elegirnos">Quiénes somos</a></li>
+
+          <li class="submenu">
+            <a href="#">Formación</a>
+            <ul class="children">
+              <li><a href="#">RGPD empleados</a></li>
+              <li><a href="#">Ciberseguridad</a></li>
+              <li><a href="#">Concienciación</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/es/contacto">Contacto</a></li>
         </ul>
-      </li>
+      </nav>
+    </header>
 
-      <li><a href="/es/por-que-elegirnos">Quiénes somos</a></li>
+    <!-- CONTENIDO DE CADA PÁGINA -->
+    <main>
+      <slot />
+    </main>
 
-      <li class="submenu">
-        <a href="#">Formación</a>
-        <ul class="children">
-          <li><a href="#">RGPD empleados</a></li>
-          <li><a href="#">Ciberseguridad</a></li>
-          <li><a href="#">Concienciación</a></li>
-        </ul>
-      </li>
-
-      <li><a href="/es/contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+  </body>
+</html>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
