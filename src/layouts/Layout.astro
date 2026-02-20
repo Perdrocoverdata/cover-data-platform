@@ -1,115 +1,31 @@
 ---
-const { title } = Astro.props;
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
+const { title = "CoverData", lang = "es" } = Astro.props;
 ---
 
-<html lang="es">
+<!doctype html>
+<html lang={lang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title ? `${title} | Cover Data` : "Cover Data"}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
   </head>
 
   <body>
-
-    <!-- ===========================
-          HEADER + LOGO + MENÚ
-    ============================ -->
-   <body>
-  <Header />
-  <main>
-    <slot />
-  </main>
-  <Footer />
-</body>
-
-    <!-- ===========================
-          CONTENIDO DE CADA PÁGINA
-    ============================ -->
+    <CookieBanner />
+    <Header />
     <main>
       <slot />
     </main>
-
+    <Footer />
   </body>
 </html>
 
-<!-- ===========================
-          ESTILOS
-============================ -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
-
   body {
     margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  /* HEADER */
-  .cd-header {
-    background: #0a2a43;
-    padding: 0 20px;
-  }
-
-  .cd-menu {
-    display: flex;
-    align-items: center;
-  }
-
-  /* LOGO */
-  .cd-logo img {
-    height: 48px; /* Ajusta el tamaño del escudo */
-    margin-right: 20px;
-  }
-
-  /* MENÚ */
-  .cd-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-  }
-
-  .cd-menu ul li {
-    position: relative;
-  }
-
-  .cd-menu ul li a {
-    display: block;
-    padding: 16px 22px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 19px; /* +4 puntos */
-  }
-
-  .cd-menu ul li:hover {
-    background: #0d3b5a;
-  }
-
-  /* SUBMENÚ */
-  .submenu .children {
-    display: none;
-    position: absolute;
-    background: #0a2a43;
-    top: 100%;
-    left: 0;
-    min-width: 240px;
-    padding: 0;
-    border-top: 2px solid #1e90ff;
-  }
-
-  .submenu:hover .children {
-    display: block;
-  }
-
-  .children li a {
-    padding: 12px 18px;
-    font-size: 18px; /* aumentado */
-    font-weight: 400;
-  }
-
-  .children li a:hover {
-    background: #0d3b5a;
   }
 </style>
+
