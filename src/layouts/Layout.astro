@@ -14,35 +14,13 @@ const { title } = Astro.props;
     <!-- ===========================
           HEADER + LOGO + MENÚ
     ============================ -->
-    <header class="cd-header">
-      <nav class="cd-menu">
-
-        <!-- LOGOTIPO -->
-        <a href="/es/" class="cd-logo">
-          <img src="/logo-escudo.png" alt="Cover Data" />
-        </a>
-
-        <ul>
-          <li><a href="/es/">Inicio</a></li>
-
-          <!-- SERVICIOS como pestaña independiente -->
-          <li><a href="/es/servicios">Servicios</a></li>
-
-          <li><a href="/es/por-que-elegirnos">Quiénes somos</a></li>
-
-          <li class="submenu">
-            <a href="#">Formación</a>
-            <ul class="children">
-              <li><a href="#">RGPD empleados</a></li>
-              <li><a href="#">Ciberseguridad</a></li>
-              <li><a href="#">Concienciación</a></li>
-            </ul>
-          </li>
-
-          <li><a href="/es/contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </header>
+   <body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+</body>
 
     <!-- ===========================
           CONTENIDO DE CADA PÁGINA
