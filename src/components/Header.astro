@@ -4,13 +4,9 @@ import Logo from "./Logo.astro";
 const path = Astro.url?.pathname ?? "/";
 const isEn = path.startsWith("/en");
 const homeHref = isEn ? "/en/" : "/es/";
-
-let menuOpen = false;
 ---
 
 <nav class="w-full bg-white text-[#071A33] px-6 py-4 shadow-sm sticky top-0 z-50">
-
-  <!-- CONTENEDOR PRINCIPAL -->
   <div class="flex items-center justify-between max-w-[1400px] mx-auto w-full">
 
     <!-- LOGO -->
@@ -18,17 +14,8 @@ let menuOpen = false;
       <Logo />
     </a>
 
-    <!-- BOTÓN HAMBURGUESA (solo móvil) -->
-    <button 
-      class="md:hidden text-[#071A33] text-3xl focus:outline-none transition-transform duration-300"
-      on:click={() => menuOpen = !menuOpen}
-      aria-label="Abrir menú"
-    >
-      {menuOpen ? "✖" : "☰"}
-    </button>
-
-    <!-- MENÚ DESKTOP -->
-    <ul class="hidden md:flex items-center justify-center gap-12 font-semibold text-[20px]">
+    <!-- MENÚ SIEMPRE HORIZONTAL -->
+    <ul class="flex items-center justify-center gap-12 font-semibold text-[20px] list-none m-0 p-0">
 
       <li><a href="/es/" class="hover:opacity-70 transition-all">Inicio</a></li>
 
@@ -77,66 +64,6 @@ let menuOpen = false;
 
     </ul>
   </div>
-
-  <!-- MENÚ MÓVIL -->
-  {menuOpen && (
-    <ul class="md:hidden mt-6 flex flex-col gap-4 text-[20px] font-semibold animate-fade-slide">
-
-      <li><a href="/es/">Inicio</a></li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Servicios</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#servicios">Evaluación de riesgos</a></li>
-            <li><a href="/es/#servicios">DPIA / PIA</a></li>
-            <li><a href="/es/#servicios">Resolución de dudas legales y técnicas</a></li>
-            <li><a href="/es/#servicios">ISO 27001</a></li>
-            <li><a href="/es/#servicios">ENS</a></li>
-            <li><a href="/es/#servicios">Gestión de brechas</a></li>
-            <li><a href="/es/#servicios">Transferencias internacionales</a></li>
-            <li><a href="/es/#servicios">Revisión de contratos</a></li>
-            <li><a href="/es/#servicios">Políticas</a></li>
-            <li><a href="/es/#servicios">Formación interna</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Quiénes somos</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#quienes-somos">Nuestra misión</a></li>
-            <li><a href="/es/#quienes-somos">Equipo</a></li>
-            <li><a href="/es/#quienes-somos">Valores</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Formación</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#formacion">RGPD para empleados</a></li>
-            <li><a href="/es/#formacion">Ciberseguridad básica</a></li>
-            <li><a href="/es/#formacion">Concienciación</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Contacto</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/contacto">Formulario</a></li>
-            <li><a href="/es/contacto">Email</a></li>
-            <li><a href="/es/contacto">Teléfono</a></li>
-          </ul>
-        </details>
-      </li>
-
-    </ul>
-  )}
 </nav>
 
 <style is:global>
