@@ -10,15 +10,15 @@ let menuOpen = false;
 
 <nav class="w-full bg-white text-[#071A33] px-6 py-4 shadow-sm sticky top-0 z-50">
 
-  <!-- CONTENEDOR -->
-  <div class="flex items-center justify-between">
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="flex items-center justify-between max-w-[1400px] mx-auto w-full">
 
     <!-- LOGO -->
     <a href={homeHref} class="block leading-none shrink-0" aria-label="CoverData home">
       <Logo />
     </a>
 
-    <!-- BOTÓN HAMBURGUESA -->
+    <!-- BOTÓN HAMBURGUESA (solo móvil) -->
     <button 
       class="md:hidden text-[#071A33] text-3xl focus:outline-none transition-transform duration-300"
       on:click={() => menuOpen = !menuOpen}
@@ -27,8 +27,8 @@ let menuOpen = false;
       {menuOpen ? "✖" : "☰"}
     </button>
 
-    <!-- MENÚ DESKTOP (HORIZONTAL) -->
-    <ul class="hidden md:flex items-center gap-12 font-semibold text-[20px]">
+    <!-- MENÚ DESKTOP -->
+    <ul class="hidden md:flex items-center justify-center gap-12 font-semibold text-[20px]">
 
       <li><a href="/es/" class="hover:opacity-70 transition-all">Inicio</a></li>
 
@@ -187,6 +187,5 @@ let menuOpen = false;
     animation: fade-slide 0.3s ease forwards;
   }
 </style>
-
 
 
