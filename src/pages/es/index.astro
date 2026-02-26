@@ -1,3 +1,4 @@
+
 ---
 import Layout from "../../layouts/Layout.astro";
 
@@ -34,6 +35,14 @@ const complementarios = [
 ---
 
 <Layout title="Servicios — CoverData">
+
+  <!-- HERO NUEVO (SIN MENÚ VERTICAL) -->
+  <section class="hero">
+    <h1 class="hero-title">Consultoría en Protección de Datos, IA y Ciberseguridad</h1>
+    <p class="hero-subtitle">Soluciones profesionales para empresas que necesitan cumplir, proteger y crecer</p>
+  </section>
+
+  <!-- SECCIÓN DE SERVICIOS ORIGINAL -->
   <section class="wrap">
     <h1 class="h1">Servicios</h1>
     <p class="lead">Soluciones de cumplimiento diseñadas para empresas tecnológicas y startups.</p>
@@ -56,6 +65,27 @@ const complementarios = [
 </Layout>
 
 <style>
+/* HERO */
+.hero {
+  background: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  margin-bottom: 40px;
+  color: #444;
+}
+
+/* SERVICIOS */
 .wrap{ max-width:1100px; margin:0 auto; padding:72px 20px; color:#fff; }
 .h1{ font-size:42px; font-weight:700; margin-bottom:12px; }
 .h2{ margin-top:48px; font-size:28px; font-weight:700; }
