@@ -4,10 +4,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply font-sans;
   }
 
   body {
-    @apply bg-white text-slate-900 antialiased;
+    @apply bg-white text-slate-900 antialiased font-sans;
   }
 
   h1 {
@@ -20,5 +21,48 @@
 
   a {
     @apply no-underline;
+  }
+}
+
+/* Estilos específicos para la página de contacto */
+@layer components {
+
+  /* Fondo azul de la sección */
+  .contact-section {
+    @apply bg-blue-800 py-12 px-6;
+  }
+
+  /* Tarjeta blanca del formulario */
+  .contact-card {
+    @apply max-w-xl mx-auto bg-white rounded-xl p-8 shadow-xl;
+  }
+
+  /* Títulos dentro del formulario */
+  .contact-card h1,
+  .contact-card h2 {
+    @apply text-blue-800 font-bold mb-6;
+  }
+
+  /* Etiquetas */
+  .contact-card label {
+    @apply block font-semibold text-slate-800 mb-1;
+  }
+
+  /* Inputs y textarea */
+  .contact-card input,
+  .contact-card textarea {
+    @apply w-full border border-slate-300 rounded-md p-3 text-slate-900 mb-4;
+  }
+
+  /* Focus */
+  .contact-card input:focus,
+  .contact-card textarea:focus {
+    @apply outline-none border-blue-700 ring-2 ring-blue-300;
+  }
+
+  /* Botón */
+  .contact-card button,
+  .contact-card input[type="submit"] {
+    @apply bg-blue-800 text-white font-semibold rounded-full py-3 px-8 cursor-pointer hover:bg-blue-900 transition;
   }
 }

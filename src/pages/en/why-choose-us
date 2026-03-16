@@ -1,0 +1,82 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+const reasons = [
+  "Specialists in startups and tech companies",
+  "Compliance without slowing down innovation",
+  "Audit‑ready documentation",
+  "Legal + technical support",
+  "Transparent pricing",
+  "Fast response and ongoing support"
+];
+---
+
+<Layout title="Why choose CoverData — GDPR & AI Compliance">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="h1">Why choose CoverData</h1>
+      <p class="lead">
+        A practical, fast and business‑aligned approach to GDPR and AI compliance.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap reasons-section">
+    <div class="reasons-grid">
+      {reasons.map(r => (
+        <div class="reason">{r}</div>
+      ))}
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.hero{
+  background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+  padding: 80px 0;
+  color: #fff;
+}
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.h1{
+  font-size:42px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.lead{
+  margin-top:12px;
+  max-width:600px;
+  color:rgba(255,255,255,.85);
+  line-height:1.55;
+  font-size:20px;
+}
+
+/* REASONS */
+.reasons-section{
+  padding:64px 0;
+  color:#fff;
+}
+.reasons-grid{
+  display:grid;
+  gap:16px;
+}
+@media(min-width:900px){
+  .reasons-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.reason{
+  background:rgba(255,255,255,.08);
+  padding:20px;
+  border-radius:14px;
+  line-height:1.55;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+</style>
+

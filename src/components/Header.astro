@@ -1,189 +1,474 @@
 ---
-import Logo from "./Logo.astro";
+import Logo from './Logo.astro';
 
-const path = Astro.url?.pathname ?? "/";
-const isEn = path.startsWith("/en");
-const homeHref = isEn ? "/en/" : "/es/";
+const path = Astro.url?.pathname ?? '/';
+const isEn = path.startsWith('/en');
+const homeHref = isEn ? '/en/' : '/es/';
 
 let menuOpen = false;
 ---
 
+<<<<<<< HEAD
 <nav class="w-full bg-white text-[#071A33] px-6 py-4 shadow-sm sticky top-0 z-50">
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="flex items-center justify-between max-w-[1400px] mx-auto w-full">
+        <!-- LOGO -->
+        <a href={homeHref} class="block leading-none shrink-0" aria-label="CoverData home">
+            <Logo />
+        </a>
 
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="flex items-center justify-between max-w-[1400px] mx-auto w-full">
+        <!-- BOTÓN HAMBURGUESA (solo móvil) -->
+        <button
+            class="md:hidden text-[#071A33] text-3xl focus:outline-none transition-transform duration-300"
+            on:click={() => (menuOpen = !menuOpen)}
+            aria-label="Abrir menú"
+        >
+            {menuOpen ? '✖' : '☰'}
+        </button>
 
-    <!-- LOGO -->
-    <a href={homeHref} class="block leading-none shrink-0" aria-label="CoverData home">
-      <Logo />
-    </a>
+        <!-- MENÚ DESKTOP (HORIZONTAL) -->
+        <ul class="hidden md:flex items-center justify-center gap-12 font-semibold text-[20px]">
+            <li><a href="/es/" class="hover:opacity-70 transition-all">Inicio</a></li>
 
-    <!-- BOTÓN HAMBURGUESA (solo móvil) -->
-    <button 
-      class="md:hidden text-[#071A33] text-3xl focus:outline-none transition-transform duration-300"
-      on:click={() => menuOpen = !menuOpen}
-      aria-label="Abrir menú"
-    >
-      {menuOpen ? "✖" : "☰"}
-    </button>
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Servicios</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#servicios">Evaluación de riesgos</a></li>
+                    <li><a href="/es/#servicios">DPIA / PIA</a></li>
+                    <li><a href="/es/#servicios">Resolución de dudas legales y técnicas</a></li>
+                    <li><a href="/es/#servicios">ISO 27001</a></li>
+                    <li><a href="/es/#servicios">ENS (básico, medio y alto)</a></li>
+                    <li><a href="/es/#servicios">Gestión de brechas de seguridad</a></li>
+                    <li><a href="/es/#servicios">Transferencias internacionales y SCC</a></li>
+                    <li><a href="/es/#servicios">Revisión de contratos y proveedores</a></li>
+                    <li><a href="/es/#servicios">Políticas y documentación</a></li>
+                    <li><a href="/es/#servicios">Formación interna</a></li>
+                </ul>
+            </li>
 
-    <!-- MENÚ DESKTOP (HORIZONTAL) -->
-    <ul class="hidden md:flex items-center justify-center gap-12 font-semibold text-[20px]">
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Quiénes somos</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#quienes-somos">Nuestra misión</a></li>
+                    <li><a href="/es/#quienes-somos">Equipo</a></li>
+                    <li><a href="/es/#quienes-somos">Valores</a></li>
+                </ul>
+            </li>
 
-      <li><a href="/es/" class="hover:opacity-70 transition-all">Inicio</a></li>
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Formación</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#formacion">RGPD para empleados</a></li>
+                    <li><a href="/es/#formacion">Ciberseguridad básica</a></li>
+                    <li><a href="/es/#formacion">Concienciación</a></li>
+                </ul>
+            </li>
 
-      <li class="nav-group relative">
-        <span class="hover:opacity-70 cursor-pointer transition-all">Servicios</span>
-        <ul class="nav-submenu animate-fade-slide">
-          <li><a href="/es/#servicios">Evaluación de riesgos</a></li>
-          <li><a href="/es/#servicios">DPIA / PIA</a></li>
-          <li><a href="/es/#servicios">Resolución de dudas legales y técnicas</a></li>
-          <li><a href="/es/#servicios">ISO 27001</a></li>
-          <li><a href="/es/#servicios">ENS (básico, medio y alto)</a></li>
-          <li><a href="/es/#servicios">Gestión de brechas de seguridad</a></li>
-          <li><a href="/es/#servicios">Transferencias internacionales y SCC</a></li>
-          <li><a href="/es/#servicios">Revisión de contratos y proveedores</a></li>
-          <li><a href="/es/#servicios">Políticas y documentación</a></li>
-          <li><a href="/es/#servicios">Formación interna</a></li>
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Contacto</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/contacto">Formulario</a></li>
+                    <li><a href="/es/contacto">Email</a></li>
+                    <li><a href="/es/contacto">Teléfono</a></li>
+                </ul>
+            </li>
         </ul>
-      </li>
+    </div>
 
-      <li class="nav-group relative">
-        <span class="hover:opacity-70 cursor-pointer transition-all">Quiénes somos</span>
-        <ul class="nav-submenu animate-fade-slide">
-          <li><a href="/es/#quienes-somos">Nuestra misión</a></li>
-          <li><a href="/es/#quienes-somos">Equipo</a></li>
-          <li><a href="/es/#quienes-somos">Valores</a></li>
-        </ul>
-      </li>
+    <!-- MENÚ MÓVIL -->
+    {
+        menuOpen && (
+            <ul class="md:hidden mt-6 flex flex-col gap-4 text-[20px] font-semibold animate-fade-slide">
+                <li>
+                    <a href="/es/">Inicio</a>
+                </li>
 
-      <li class="nav-group relative">
-        <span class="hover:opacity-70 cursor-pointer transition-all">Formación</span>
-        <ul class="nav-submenu animate-fade-slide">
-          <li><a href="/es/#formacion">RGPD para empleados</a></li>
-          <li><a href="/es/#formacion">Ciberseguridad básica</a></li>
-          <li><a href="/es/#formacion">Concienciación</a></li>
-        </ul>
-      </li>
+                <li>
+                    <details>
+                        <summary class="cursor-pointer">Servicios</summary>
+                        <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
+                            <li>
+                                <a href="/es/#servicios">Evaluación de riesgos</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">DPIA / PIA</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Resolución de dudas legales y técnicas</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">ISO 27001</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">ENS</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Gestión de brechas</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Transferencias internacionales</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Revisión de contratos</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Políticas</a>
+                            </li>
+                            <li>
+                                <a href="/es/#servicios">Formación interna</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
 
-      <li class="nav-group relative">
-        <span class="hover:opacity-70 cursor-pointer transition-all">Contacto</span>
-        <ul class="nav-submenu animate-fade-slide">
-          <li><a href="/es/contacto">Formulario</a></li>
-          <li><a href="/es/contacto">Email</a></li>
-          <li><a href="/es/contacto">Teléfono</a></li>
-        </ul>
-      </li>
+                <li>
+                    <details>
+                        <summary class="cursor-pointer">Quiénes somos</summary>
+                        <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
+                            <li>
+                                <a href="/es/#quienes-somos">Nuestra misión</a>
+                            </li>
+                            <li>
+                                <a href="/es/#quienes-somos">Equipo</a>
+                            </li>
+                            <li>
+                                <a href="/es/#quienes-somos">Valores</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
 
-    </ul>
-  </div>
+                <li>
+                    <details>
+                        <summary class="cursor-pointer">Formación</summary>
+                        <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
+                            <li>
+                                <a href="/es/#formacion">RGPD para empleados</a>
+                            </li>
+                            <li>
+                                <a href="/es/#formacion">Ciberseguridad básica</a>
+                            </li>
+                            <li>
+                                <a href="/es/#formacion">Concienciación</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
 
-  <!-- MENÚ MÓVIL -->
-  {menuOpen && (
-    <ul class="md:hidden mt-6 flex flex-col gap-4 text-[20px] font-semibold animate-fade-slide">
-
-      <li><a href="/es/">Inicio</a></li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Servicios</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#servicios">Evaluación de riesgos</a></li>
-            <li><a href="/es/#servicios">DPIA / PIA</a></li>
-            <li><a href="/es/#servicios">Resolución de dudas legales y técnicas</a></li>
-            <li><a href="/es/#servicios">ISO 27001</a></li>
-            <li><a href="/es/#servicios">ENS</a></li>
-            <li><a href="/es/#servicios">Gestión de brechas</a></li>
-            <li><a href="/es/#servicios">Transferencias internacionales</a></li>
-            <li><a href="/es/#servicios">Revisión de contratos</a></li>
-            <li><a href="/es/#servicios">Políticas</a></li>
-            <li><a href="/es/#servicios">Formación interna</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Quiénes somos</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#quienes-somos">Nuestra misión</a></li>
-            <li><a href="/es/#quienes-somos">Equipo</a></li>
-            <li><a href="/es/#quienes-somos">Valores</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Formación</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/#formacion">RGPD para empleados</a></li>
-            <li><a href="/es/#formacion">Ciberseguridad básica</a></li>
-            <li><a href="/es/#formacion">Concienciación</a></li>
-          </ul>
-        </details>
-      </li>
-
-      <li>
-        <details>
-          <summary class="cursor-pointer">Contacto</summary>
-          <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
-            <li><a href="/es/contacto">Formulario</a></li>
-            <li><a href="/es/contacto">Email</a></li>
-            <li><a href="/es/contacto">Teléfono</a></li>
-          </ul>
-        </details>
-      </li>
-
-    </ul>
-  )}
+                <li>
+                    <details>
+                        <summary class="cursor-pointer">Contacto</summary>
+                        <ul class="ml-6 mt-2 flex flex-col gap-2 text-[18px]">
+                            <li>
+                                <a href="/es/contacto">Formulario</a>
+                            </li>
+                            <li>
+                                <a href="/es/contacto">Email</a>
+                            </li>
+                            <li>
+                                <a href="/es/contacto">Teléfono</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        )
+    }
 </nav>
 
+=======
+<nav class="w-full bg-white text-[#071A33] px-4 py-3 shadow-sm sticky top-0 z-50">
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="flex items-center justify-between gap-4 max-w-[1400px] mx-auto w-full">
+        <!-- LOGO -->
+        <a href={homeHref} class="block leading-none shrink-0" aria-label="CoverData home">
+            <Logo />
+        </a>
+
+        <!-- MENÚ HORIZONTAL — solo escritorio -->
+        <ul class="hidden md:flex items-center gap-10 font-semibold text-[20px]">
+            <li><a href="/es/" class="hover:opacity-70 transition-all">Inicio</a></li>
+
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Servicios</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#servicios">Evaluación de riesgos</a></li>
+                    <li><a href="/es/#servicios">DPIA / PIA</a></li>
+                    <li><a href="/es/#servicios">Resolución de dudas legales y técnicas</a></li>
+                    <li><a href="/es/#servicios">ISO 27001</a></li>
+                    <li><a href="/es/#servicios">ENS (básico, medio y alto)</a></li>
+                    <li><a href="/es/#servicios">Gestión de brechas de seguridad</a></li>
+                    <li><a href="/es/#servicios">Transferencias internacionales y SCC</a></li>
+                    <li><a href="/es/#servicios">Revisión de contratos y proveedores</a></li>
+                    <li><a href="/es/#servicios">Políticas y documentación</a></li>
+                    <li><a href="/es/#servicios">Formación interna</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Quiénes somos</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#quienes-somos">Nuestra misión</a></li>
+                    <li><a href="/es/#quienes-somos">Equipo</a></li>
+                    <li><a href="/es/#quienes-somos">Valores</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Formación</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/#formacion">RGPD para empleados</a></li>
+                    <li><a href="/es/#formacion">Ciberseguridad básica</a></li>
+                    <li><a href="/es/#formacion">Concienciación</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-group relative">
+                <span class="hover:opacity-70 cursor-pointer transition-all">Contacto</span>
+                <ul class="nav-submenu animate-fade-slide">
+                    <li><a href="/es/contacto">Formulario</a></li>
+                    <li><a href="/es/contacto">Email</a></li>
+                    <li><a href="/es/contacto">Teléfono</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <!-- BOTÓN HAMBURGUESA — solo móvil -->
+        <button
+            id="hamburger-btn"
+            class="md:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8 focus:outline-none"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+        >
+            <span class="hamburger-bar block w-6 h-[2px] bg-[#071A33] transition-all duration-300"></span>
+            <span class="hamburger-bar block w-6 h-[2px] bg-[#071A33] transition-all duration-300"></span>
+            <span class="hamburger-bar block w-6 h-[2px] bg-[#071A33] transition-all duration-300"></span>
+        </button>
+    </div>
+
+    <!-- MENÚ MÓVIL desplegable -->
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out" aria-hidden="true">
+        <ul class="flex flex-col font-semibold text-base pt-3 pb-2 gap-1">
+            <li>
+                <a href="/es/" class="block px-2 py-2 hover:bg-gray-100 rounded transition-all">Inicio</a>
+            </li>
+
+            <li class="mobile-group">
+                <button
+                    class="mobile-group-toggle w-full flex justify-between items-center px-2 py-2 hover:bg-gray-100 rounded transition-all"
+                    aria-expanded="false"
+                >
+                    <span>Servicios</span>
+                    <svg
+                        class="mobile-chevron w-4 h-4 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </button>
+                <ul class="mobile-sub hidden flex-col gap-0 pl-4 pb-1">
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Evaluación de riesgos</a></li>
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">DPIA / PIA</a></li>
+                    <li>
+                        <a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all"
+                            >Resolución de dudas legales y técnicas</a
+                        >
+                    </li>
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">ISO 27001</a></li>
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">ENS (básico, medio y alto)</a></li>
+                    <li>
+                        <a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Gestión de brechas de seguridad</a>
+                    </li>
+                    <li>
+                        <a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all"
+                            >Transferencias internacionales y SCC</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all"
+                            >Revisión de contratos y proveedores</a
+                        >
+                    </li>
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Políticas y documentación</a></li>
+                    <li><a href="/es/#servicios" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Formación interna</a></li>
+                </ul>
+            </li>
+
+            <li class="mobile-group">
+                <button
+                    class="mobile-group-toggle w-full flex justify-between items-center px-2 py-2 hover:bg-gray-100 rounded transition-all"
+                    aria-expanded="false"
+                >
+                    <span>Quiénes somos</span>
+                    <svg
+                        class="mobile-chevron w-4 h-4 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </button>
+                <ul class="mobile-sub hidden flex-col gap-0 pl-4 pb-1">
+                    <li><a href="/es/#quienes-somos" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Nuestra misión</a></li>
+                    <li><a href="/es/#quienes-somos" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Equipo</a></li>
+                    <li><a href="/es/#quienes-somos" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Valores</a></li>
+                </ul>
+            </li>
+
+            <li class="mobile-group">
+                <button
+                    class="mobile-group-toggle w-full flex justify-between items-center px-2 py-2 hover:bg-gray-100 rounded transition-all"
+                    aria-expanded="false"
+                >
+                    <span>Formación</span>
+                    <svg
+                        class="mobile-chevron w-4 h-4 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </button>
+                <ul class="mobile-sub hidden flex-col gap-0 pl-4 pb-1">
+                    <li><a href="/es/#formacion" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">RGPD para empleados</a></li>
+                    <li><a href="/es/#formacion" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Ciberseguridad básica</a></li>
+                    <li><a href="/es/#formacion" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Concienciación</a></li>
+                </ul>
+            </li>
+
+            <li class="mobile-group">
+                <button
+                    class="mobile-group-toggle w-full flex justify-between items-center px-2 py-2 hover:bg-gray-100 rounded transition-all"
+                    aria-expanded="false"
+                >
+                    <span>Contacto</span>
+                    <svg
+                        class="mobile-chevron w-4 h-4 transition-transform duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg
+                    >
+                </button>
+                <ul class="mobile-sub hidden flex-col gap-0 pl-4 pb-1">
+                    <li><a href="/es/contacto" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Formulario</a></li>
+                    <li><a href="/es/contacto" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Email</a></li>
+                    <li><a href="/es/contacto" class="block px-2 py-1.5 text-sm hover:bg-gray-100 rounded transition-all">Teléfono</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById('hamburger-btn') as HTMLButtonElement | null;
+    const menu = document.getElementById('mobile-menu') as HTMLElement | null;
+
+    if (btn && menu) {
+        const bars = btn.querySelectorAll<HTMLElement>('.hamburger-bar');
+
+        btn.addEventListener('click', () => {
+            const isOpen = menu.getAttribute('aria-hidden') === 'false';
+            if (isOpen) {
+                menu.style.maxHeight = '0px';
+                menu.setAttribute('aria-hidden', 'true');
+                btn.setAttribute('aria-expanded', 'false');
+                bars[0].style.transform = '';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = '';
+            } else {
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                menu.setAttribute('aria-hidden', 'false');
+                btn.setAttribute('aria-expanded', 'true');
+                // 7px = 5px gap between bars + 1px half bar-height — animates bars into an × shape
+                bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+            }
+        });
+
+        document.querySelectorAll<HTMLButtonElement>('.mobile-group-toggle').forEach((toggle) => {
+            toggle.addEventListener('click', () => {
+                const sub = toggle.parentElement?.querySelector<HTMLElement>('.mobile-sub');
+                if (!sub) return;
+                const chevron = toggle.querySelector<HTMLElement>('.mobile-chevron');
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                if (expanded) {
+                    sub.classList.add('hidden');
+                    sub.classList.remove('flex');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    if (chevron) chevron.style.transform = '';
+                } else {
+                    sub.classList.remove('hidden');
+                    sub.classList.add('flex');
+                    toggle.setAttribute('aria-expanded', 'true');
+                    if (chevron) chevron.style.transform = 'rotate(180deg)';
+                }
+                // recalculate outer panel height after sub-menu toggles
+                if (menu.getAttribute('aria-hidden') === 'false') {
+                    menu.style.maxHeight = menu.scrollHeight + 'px';
+                }
+            });
+        });
+    }
+</script>
+
+>>>>>>> c333f98f8fee6c53a042303d7f3161a389f9c764
 <style is:global>
-  .nav-group { position: relative; }
+    .nav-group {
+        position: relative;
+    }
 
-  .nav-submenu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    margin-top: 10px;
-    background: white;
-    color: #071A33;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    min-width: 240px;
-    z-index: 99999;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-  }
+    .nav-submenu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin-top: 10px;
+        background: white;
+        color: #071a33;
+        padding: 16px;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        min-width: 240px;
+        z-index: 99999;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+    }
 
-  .nav-group:hover .nav-submenu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .nav-group:hover .nav-submenu {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-  .nav-submenu a {
-    display: block;
-    padding: 6px 0;
-    text-decoration: none;
-    color: #071A33;
-    font-size: 18px;
-  }
+    .nav-submenu a {
+        display: block;
+        padding: 6px 0;
+        text-decoration: none;
+        color: #071a33;
+        font-size: 18px;
+    }
 
-  .nav-submenu a:hover {
-    text-decoration: underline;
-  }
+    .nav-submenu a:hover {
+        text-decoration: underline;
+    }
 
-  @keyframes fade-slide {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+    @keyframes fade-slide {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-  .animate-fade-slide {
-    animation: fade-slide 0.3s ease forwards;
-  }
+    .animate-fade-slide {
+        animation: fade-slide 0.3s ease forwards;
+    }
 </style>

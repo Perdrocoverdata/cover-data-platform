@@ -2,28 +2,22 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Contact | CoverData" lang="en">
-  <main class="container legal">
-    <h1>Contact</h1>
+<Layout title="Contact — CoverData">
 
-    <p>Request your free GDPR & AI compliance check.</p>
-
-    <form
-      name="contact"
-      method="POST"
-      action="/en/thanks"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="contact-form"
-      >
-      <!-- Required hidden field for Netlify -->
-      <input type="hidden" name="form-name" value="contact" />
-
-      <!-- Anti-spam -->
-      <p style="display:none;">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="h1">Contact</h1>
+      <p class="lead">
+        Book a 30‑minute call or send us your message.  
+        We reply within 24 hours.
       </p>
+    </div>
+  </section>
 
+  <!-- FORM -->
+  <section class="wrap form-section">
+    <form class="form" action="https://formspree.io/f/mwkggkqk" method="POST">
       <label>
         Name
         <input type="text" name="name" required />
@@ -35,42 +29,86 @@ import Layout from "../../layouts/Layout.astro";
       </label>
 
       <label>
+        Company
+        <input type="text" name="company" />
+      </label>
+
+      <label>
         Message
-        <textarea name="message" required></textarea>
+        <textarea name="message" rows="5" required></textarea>
       </label>
 
-      <!-- Legal checkbox -->
-      <label class="legal-check">
-        <input type="checkbox" name="privacy" required />
-        I have read and accept the
-        <a href="/en/privacy-policy" target="_blank">Privacy Policy</a>
-      </label>
+      <button type="submit" class="btn primary">Send message</button>
 
-      <button type="submit">Send</button>
+      <p class="micro">
+        Response within 24 hours • 100% confidential
+      </p>
     </form>
-  </main>
+  </section>
+
 </Layout>
 
 <style>
-  .contact-form {
-    max-width: 520px;
-    margin-top: 20px;
-  }
-  .contact-form label {
-    display: block;
-    margin-bottom: 14px;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-  }
-  .legal-check {
-    font-size: 13px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
+.hero{
+  background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
+  padding: 80px 0;
+  color: #fff;
+}
+.wrap{
+  max-width:700px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.h1{
+  font-size:42px;
+  font-weight:700;
+}
+.lead{
+  margin-top:12px;
+  max-width:500px;
+  color:rgba(255,255,255,.85);
+  line-height:1.55;
+  font-size:20px;
+}
+
+/* FORM */
+.form-section{
+  padding:64px 0;
+  color:#fff;
+}
+.form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+label{
+  display:flex;
+  flex-direction:column;
+  font-weight:600;
+  gap:6px;
+}
+input, textarea{
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  font-size:16px;
+}
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:16px;
+  cursor:pointer;
+}
+.primary{
+  background:#fff;
+  color:#071A33;
+}
+.micro{
+  margin-top:8px;
+  font-size:14px;
+  color:rgba(255,255,255,.7);
+}
 </style>
 

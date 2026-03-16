@@ -3,18 +3,73 @@ import Layout from "../../layouts/Layout.astro";
 
 const brand = {
   name: "CoverData",
-  claim: "GDPR & AI compliance for tech companies",
-  sub: "We help tech companies comply with GDPR and EU AI regulations, reducing legal risk and enabling secure growth in Europe.",
+  claim: "GDPR & AI Compliance for Tech Companies",
+  sub: "We support startups and technology companies in implementing GDPR and the European AI Act, reducing legal risks and enabling safe growth across Europe."
 };
+
+const services = [
+  {
+    title: "GDPR Audit",
+    price: "from 490 €",
+    bullets: [
+      "Gap and risk analysis",
+      "Review of documentation and vendors",
+      "Prioritized compliance roadmap"
+    ]
+  },
+  {
+    title: "AI Compliance / EU AI Act",
+    price: "from 390 €",
+    bullets: [
+      "System classification under the AI Act",
+      "Risk assessment and governance framework",
+      "Technical documentation and mandatory measures"
+    ]
+  },
+  {
+    title: "External Data Protection Officer (DPO)",
+    price: "from 90 €/month",
+    bullets: [
+      "Ongoing supervision and monitoring",
+      "Handling data subject requests",
+      "Audit‑ready reports and evidence"
+    ]
+  }
+];
+
+const steps = [
+  {
+    title: "1) Assessment",
+    text: "Review of product, data flows and vendors. Identification of risks and quick wins."
+  },
+  {
+    title: "2) Compliance plan",
+    text: "Legal roadmap, policies, DPIA/PIA and technical & organizational measures."
+  },
+  {
+    title: "3) Implementation",
+    text: "Support for legal and technical teams with audit‑ready evidence."
+  }
+];
+
+const reasons = [
+  "Specialists in startups and tech companies",
+  "Compliance without slowing down innovation",
+  "Audit‑ready documentation",
+  "Legal + technical support",
+  "Transparent pricing",
+  "Fast response and ongoing support"
+];
 ---
 
-<Layout title="CoverData — GDPR & AI Compliance Consulting">
+<Layout title="CoverData — GDPR & AI Compliance">
+
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <header class="topbar">
         <div class="brandbox">
-          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" style="height:200px;width:auto;max-height:none;" />
+          <img src="/coverdata-logo.png" alt="CoverData logo" class="brandlogo" />
           <div class="brandtext">
             <div class="brandname">{brand.name}</div>
             <div class="brandsub">GDPR & AI Compliance</div>
@@ -31,7 +86,6 @@ const brand = {
       <h1 class="h1">{brand.claim}</h1>
       <p class="lead">{brand.sub}</p>
 
-      <!-- CTA -->
       <div class="cta">
         <a class="btn primary" href="/en/contact">Request a free assessment</a>
         <a class="btn ghost" href="/en/gdpr-ai">View GDPR & AI services</a>
@@ -41,328 +95,476 @@ const brand = {
 
       <!-- SERVICES -->
       <div class="cards">
-        <div class="card">
-          <div class="cardtitle">GDPR Audit</div>
-          <div class="cardtext">
-            Risk assessment, compliance gap analysis and a clear remediation plan.
+        {services.map(s => (
+          <div class="card">
+            <div class="cardtitle">{s.title}</div>
+            <div class="cardprice">{s.price}</div>
+            <ul class="cardlist">
+              {s.bullets.map(item => (
+                <li>{item}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="cardtitle">AI Compliance</div>
-          <div class="cardtext">
-            DPIA, privacy by design and governance for AI and data-driven products.
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="cardtitle">EU Market Expansion</div>
-          <div class="cardtext">
-            International data transfers, SCCs and vendor compliance management.
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- TRUST BAR (igual que ES en formato) -->
+  <!-- TRUST -->
   <section class="trust">
     <div class="trust-wrap">
       <span>European regulatory framework:</span>
       <strong>GDPR</strong>
-      <strong>EU AI Act</strong>
+      <strong>LOPDGDD</strong>
+      <strong>AI Act</strong>
     </div>
   </section>
 
-  <!-- HOW WE WORK -->
+  <!-- HOW -->
   <section class="how">
     <div class="how-wrap">
       <h2 class="how-h2">How we work</h2>
       <p class="how-lead">
-        Practical and business-aligned: we reduce legal risk without slowing down product teams.
+        <strong>A practical, business‑aligned approach:</strong> we reduce legal risks without slowing down innovation or product development.
       </p>
 
       <div class="steps">
-        <div class="step">
-          <div class="step-title">1) Assessment</div>
-          <div class="step-text">
-            Review product, data flows and vendors. Identify risks and quick wins.
+        {steps.map(step => (
+          <div class="step">
+            <div class="step-title"><strong>{step.title}</strong></div>
+            <div class="step-text">{step.text}</div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-title">2) Compliance roadmap</div>
-          <div class="step-text">
-            Policies, DPIA/PIA and technical/organisational measures with clear priorities.
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-title">3) Implementation support</div>
-          <div class="step-text">
-            Hands-on support with legal and engineering teams, plus audit-ready evidence.
-          </div>
-        </div>
-      </div>
-
-      <div class="final-cta">
-        <a class="btn primary" href="/en/contact">Request a free assessment</a>
-        <a class="btn ghost" href="/en/gdpr-ai">View GDPR & AI services</a>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="why-wrap">
+      <h2 class="why-h2">Why choose us</h2>
+
+      <ul class="why-list">
+        {reasons.map(r => <li><strong>{r}</strong></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section class="insights">
+    <div class="insights-wrap">
+      <h2 class="insights-h2">Insights & Resources</h2>
+      <p class="insights-lead">
+        Practical guidance and relevant updates from trusted sources such as the Spanish Data Protection Authority (AEPD) and the European Data Protection Board (EDPB).
+      </p>
+
+      <div class="insights-grid">
+
+        <article class="insight-card">
+          <h3 class="insight-title">AEPD: Key Principles for AI Systems</h3>
+          <p class="insight-text">
+            The AEPD highlights transparency, risk assessment, and data minimization as essential pillars for AI governance.
+          </p>
+          <a href="https://www.aepd.es" target="_blank" class="insight-link">Read more</a>
+        </article>
+
+        <article class="insight-card">
+          <h3 class="insight-title">EDPB Guidelines on International Transfers</h3>
+          <p class="insight-text">
+            The EDPB provides practical recommendations for assessing third‑country risks and implementing supplementary measures.
+          </p>
+          <a href="https://edpb.europa.eu" target="_blank" class="insight-link">Read more</a>
+        </article>
+
+        <article class="insight-card">
+          <h3 class="insight-title">AEPD: Best Practices for DPIAs</h3>
+          <p class="insight-text">
+            The AEPD’s DPIA guidance outlines when impact assessments are mandatory and how to evaluate high‑risk processing activities.
+          </p>
+          <a href="https://www.aepd.es" target="_blank" class="insight-link">Read more</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="cta-wrap">
+      <h2 class="cta-title">Need help with GDPR or AI compliance?</h2>
+      <p class="cta-sub">Book a 30‑minute meeting. No commitment.</p>
+      <a class="btn primary" href="/en/contact">Request a free assessment</a>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-  .hero{
-    background: linear-gradient(180deg, #071A33 0%, #0A2446 100%);
-    overflow: hidden;
-  }
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+Pro:wght@400;600;700&display=swap');
 
-  .wrap{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 72px 20px 64px;
-    color: #fff;
-  }
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
 
-  .topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-  }
+h1, h2, h3, .h1, .how-h2, .why-h2, .insights-h2 {
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
 
-  .brandbox{
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  background: rgba(255,255,255,0.97);
-  border-radius: 28px;
-  padding: 30px 34px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.28);
-  color: #0f172a;
+/* GENERAL */
+:root{
+  --primary:#071A33;
+  --secondary:#0A2446;
+  --accent:#1EC6D7;
+  --accent2:#0FB3C9;
+}
+
+/* HERO */
+.hero{
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: 140px 0 110px;
+  color: #fff;
+}
+
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:60px;
+}
+
+.brandbox{
+  display:flex;
+  align-items:center;
+  gap:40px; /* más espacio entre logo y texto */
 }
 
 .brandlogo{
-  height: 160px;   /* móvil */
-  width: auto;
-  display: block;
+  height:260px; /* LOGO MÁS GRANDE */
+  max-height:260px;
+  width:auto;
+  object-fit:contain;
 }
 
-@media (min-width: 900px){
-  .brandlogo{
-    height: 200px; /* escritorio – iguala visualmente al H1 */
+.brandname{
+  font-size:42px;
+  font-weight:800;
+}
+
+.brandsub{
+  font-size:19px;
+  opacity:.85;
+}
+
+.lang a{
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+}
+.lang .active{
+  font-weight:700;
+  color:var(--accent);
+}
+
+.h1{
+  font-size:64px;
+  font-weight:800;
+  margin-bottom:28px;
+  max-width:820px;
+  line-height:1.15;
+}
+
+.lead{
+  max-width:760px;
+  font-size:24px;
+  color:rgba(255,255,255,.9);
+  line-height:1.7;
+  margin-top:24px;
+}
+
+.cta{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+}
+
+.btn{
+  padding:18px 30px;
+  border-radius:16px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:18px;
+}
+
+.primary{ 
+  background:#fff; 
+  color:var(--primary); 
+}
+
+.ghost{ 
+  border:2px solid var(--accent); 
+  color:var(--accent); 
+}
+
+.micro{
+  margin-top:24px;
+  font-size:16px;
+  opacity:.85;
+}
+
+/* SERVICES */
+.cards{
+  margin-top:60px;
+  display:grid;
+  gap:32px;
+}
+
+@media(min-width:900px){
+  .cards{ grid-template-columns:repeat(3,1fr); }
+}
+
+.card{
+  background:#fff;
+  color:#0f172a;
+  padding:40px 36px;
+  border-radius:24px;
+  border:2px solid var(--accent);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 32px rgba(0,0,0,.18);
+}
+
+.cardtitle{
+  font-size:24px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+.cardprice{
+  margin-top:10px;
+  font-size:19px;
+  font-weight:700;
+  color:var(--accent2);
+}
+
+.cardlist{
+  margin-top:16px;
+  padding-left:20px;
+  line-height:1.7;
+  font-size:17px;
+}
+
+/* TRUST */
+.trust{
+  background:#fff;
+  padding:60px 0;
+  text-align:center;
+  border-top:4px solid var(--accent);
+  border-bottom:4px solid var(--accent2);
+}
+
+.trust-wrap strong{
+  margin:0 14px;
+  font-size:20px;
+  color:var(--primary);
+}
+
+/* HOW */
+.how{
+  padding:120px 0;
+  background:#f4f8ff;
+}
+
+.how-wrap{
+  padding-left:80px; /* margen izquierdo aumentado */
+}
+
+.how-h2{
+  font-size:42px;
+  margin-bottom:24px;
+  color:var(--primary);
+}
+
+.how-lead{
+  margin-top:28px;
+  max-width:720px;
+  line-height:1.8;
+  font-size:22px;
+  font-weight:500;
+  color:#334155;
+}
+
+.steps{
+  margin-top:50px;
+  display:grid;
+  gap:36px;
+}
+
+.step{
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  border-left:6px solid var(--accent);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.step-title{
+  font-size:24px;
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.step-text{
+  font-size:19px;
+  line-height:1.75;
+  color:#475569;
+}
+
+/* WHY */
+.why{
+  padding:120px 0;
+}
+
+.why-wrap{
+  padding-left:80px; /* margen izquierdo aumentado */
+}
+
+.why-h2{
+  font-size:42px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+.why-list{
+  margin-top:36px;
+  line-height:1.9;
+  font-size:21px;
+  max-width:760px;
+}
+
+.why-list li{
+  margin-bottom:14px;
+  padding-left:24px;
+  position:relative;
+}
+
+.why-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--accent);
+  font-size:28px;
+  line-height:20px;
+}
+
+/* INSIGHTS */
+.insights{
+  padding:90px 0;
+  background:#ffffff;
+}
+
+.insights-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+.insights-h2{
+  font-size:40px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+.insights-lead{
+  margin-top:20px;
+  max-width:720px;
+  font-size:21px;
+  line-height:1.75;
+  color:#334155;
+}
+
+.insights-grid{
+  margin-top:44px;
+  display:grid;
+  gap:32px;
+}
+
+@media(min-width:900px){
+  .insights-grid{
+    grid-template-columns:repeat(3,1fr);
   }
 }
 
-
-@media (min-width: 900px){
-  .brandlogo{
-    height: 148px; /* escritorio */
-  }
+.insight-card{
+  background:#f8fafc;
+  padding:32px;
+  border-radius:20px;
+  border:2px solid var(--accent);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:transform .2s ease, box-shadow .2s ease;
 }
 
-  @media (min-width: 900px){
-    .brandlogo{ height: 112px; }
-  }
+.insight-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(0,0,0,.12);
+}
 
-  .brandname{
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.1;
-  }
+.insight-title{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+}
 
-  .brandsub{
-    font-size: 12px;
-    color: #475569;
-    margin-top: 2px;
-  }
+.insight-text{
+  margin-top:12px;
+  font-size:18px;
+  line-height:1.7;
+  color:#475569;
+}
 
-  .lang{
-    font-size: 14px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    opacity: 0.95;
-  }
-  .lang a{ color:#fff; text-decoration:none; }
-  .lang a:hover{ text-decoration:underline; }
-  .lang .active{ font-weight:700; }
-  .sep{ color: rgba(255,255,255,0.45); }
+.insight-link{
+  display:inline-block;
+  margin-top:16px;
+  font-weight:700;
+  color:var(--accent);
+  text-decoration:none;
+}
 
-  .h1{
-    margin-top: 40px;
-    font-size: 48px;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    font-weight: 700;
-    max-width: 920px;
-  }
+/* CTA FINAL */
+.cta-final{
+  background:var(--primary);
+  padding:100px 0;
+  text-align:center;
+  color:#fff;
+  border-top:6px solid var(--accent);
+}
 
-  .lead{
-    margin-top: 16px;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 640px;
-    color: rgba(255,255,255,0.88);
-  }
+.cta-title{
+  font-size:42px;
+  font-weight:800;
+}
 
-  .cta{
-    margin-top: 20px;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-
-  .btn{
-    display:inline-block;
-    padding: 10px 16px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration:none;
-    transition: transform .12s ease;
-  }
-
-  .primary{
-    background:#fff;
-    color:#071A33;
-    box-shadow: 0 10px 26px rgba(0,0,0,.25);
-  }
-
-  .ghost{
-    border: 1px solid rgba(255,255,255,.4);
-    color:#fff;
-    background: rgba(255,255,255,.08);
-  }
-
-  .btn:hover{
-    transform: translateY(-1px);
-  }
-
-  .micro{
-    margin-top: 10px;
-    font-size: 13px;
-    color: rgba(255,255,255,.78);
-  }
-
-  .cards{
-    margin-top: 36px;
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  @media (min-width: 900px){
-    .cards{ grid-template-columns: repeat(3, 1fr); }
-    .h1{ font-size: 56px; }
-  }
-
-  .card{
-    background: #fff;
-    color: #0f172a;
-    border-radius: 22px;
-    padding: 18px 18px 16px;
-    box-shadow: 0 14px 35px rgba(0,0,0,0.25);
-  }
-
-  .cardtitle{
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-
-  .cardtext{
-    font-size: 14px;
-    color: #334155;
-    line-height: 1.55;
-  }
-
-  /* TRUST BAR */
-  .trust{
-    background: #06162b;
-    border-top: 1px solid rgba(255,255,255,.08);
-  }
-
-  .trust-wrap{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 14px 20px;
-    display:flex;
-    gap:16px;
-    align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    color: rgba(255,255,255,.85);
-    font-size: 13px;
-  }
-
-  .trust-wrap strong{
-    background: rgba(255,255,255,.1);
-    padding: 6px 10px;
-    border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: .02em;
-  }
-
-  /* HOW WE WORK */
-  .how{
-    background: #0A2446;
-    color: #fff;
-    padding: 56px 0;
-  }
-
-  .how-wrap{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .how-h2{
-    font-size: 28px;
-    margin: 0;
-  }
-
-  .how-lead{
-    margin-top: 10px;
-    color: rgba(255,255,255,.85);
-    max-width: 720px;
-    line-height: 1.6;
-  }
-
-  .steps{
-    margin-top: 24px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  @media (min-width: 900px){
-    .steps{ grid-template-columns: repeat(3, 1fr); }
-  }
-
-  .step{
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 18px;
-    padding: 16px;
-  }
-
-  .step-title{
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
-
-  .step-text{
-    color: rgba(255,255,255,.85);
-    font-size: 14px;
-    line-height: 1.55;
-  }
-
-  .final-cta{
-    margin-top: 24px;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-  }
+.cta-sub{
+  margin-top:16px;
+  margin-bottom:36px;
+  color:rgba(255,255,255,.85);
+}
 </style>
+
 

@@ -2,75 +2,151 @@
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Contacto | CoverData" lang="es">
-  <main class="container legal">
-    <h1>Contacto</h1>
+<Layout title="Contacto — CoverData">
 
-    <p>Solicita tu diagnóstico gratuito RGPD & IA.</p>
-
-     <form
-      name="contact"
-      method="POST"
-      action="/es/gracias"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="contact-form"
-     >
-      <!-- Campo oculto obligatorio para Netlify -->
-      <input type="hidden" name="form-name" value="contact" />
-
-      <!-- Anti-spam -->
-      <p style="display:none;">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
+  <!-- HERO EN BLANCO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="h1">Contacto</h1>
+      <p class="lead">
+        Agenda una reunión de 30 minutos o envíanos tu consulta.  
+        Te responderemos en menos de 24 horas.
       </p>
+    </div>
+  </section>
 
-      <label>
-        Nombre
-        <input type="text" name="name" required />
-      </label>
+  <!-- FORMULARIO -->
+  <section class="contact-section">
+    <div class="contact-card">
+      <form action="https://api.web3forms.com/submit" method="POST">
 
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
+        <input type="hidden" name="access_key" value="560278c0-a113-46f8-b40d-61c34653f23e" />
+        <input type="hidden" name="from_name" value="Cover Data Website" />
+        <input type="hidden" name="subject" value="Nuevo mensaje desde el formulario de contacto" />
+        <input type="checkbox" name="botcheck" style="display:none;" />
 
-      <label>
-        Mensaje
-        <textarea name="message" required></textarea>
-      </label>
+        <label>
+          Nombre
+          <input type="text" name="name" required />
+        </label>
 
-      <!-- Checkbox legal obligatorio -->
-      <label class="legal-check">
-        <input type="checkbox" name="privacy" required />
-        He leído y acepto la
-        <a href="/es/politica-privacidad" target="_blank">Política de Privacidad</a>
-      </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </main>
+        <label>
+          Empresa
+          <input type="text" name="company" />
+        </label>
+
+        <label>
+          Mensaje
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit">Enviar mensaje</button>
+
+        <p class="micro">
+          Respuesta en menos de 24 horas • 100% confidencial
+        </p>
+      </form>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
-  .contact-form {
-    max-width: 520px;
-    margin-top: 20px;
-  }
-  .contact-form label {
-    display: block;
-    margin-bottom: 14px;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 4px;
-  }
-  .legal-check {
-    font-size: 13px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
+.hero{
+  background:white;
+  padding:80px 0;
+  color:#071A33;
+  font-family:var(--font-sans);
+}
+.wrap{
+  max-width:700px;
+  margin:0 auto;
+  padding:0 20px;
+}
+.h1{
+  font-size:42px;
+  font-weight:700;
+  color:#071A33;
+  font-family:var(--font-sans);
+}
+.lead{
+  margin-top:12px;
+  max-width:500px;
+  color:#071A33;
+  line-height:1.55;
+  font-size:20px;
+  font-family:var(--font-sans);
+}
+
+.contact-section{
+  background:white;
+  padding:64px 20px;
+  font-family:var(--font-sans);
+}
+.contact-card{
+  max-width:700px;
+  margin:0 auto;
+  background:white;
+  padding:40px;
+  border-radius:16px;
+  border:1px solid #e5e7eb;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+  font-family:var(--font-sans);
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  font-weight:600;
+  gap:6px;
+  color:#071A33;
+  font-size:16px;
+  font-family:var(--font-sans);
+}
+
+input, textarea{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #cbd2e1;
+  font-size:16px;
+  color:#071A33;
+  background:white;
+  font-family:var(--font-sans);
+}
+input:focus, textarea:focus{
+  outline:none;
+  border-color:#071A33;
+  box-shadow:0 0 0 2px rgba(7,26,51,0.2);
+}
+
+button{
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  border:none;
+  background:#071A33;
+  color:white;
+  transition:0.2s;
+  font-family:var(--font-sans);
+}
+button:hover{
+  background:#0A2446;
+}
+
+.micro{
+  margin-top:12px;
+  font-size:14px;
+  color:#071A33;
+  opacity:0.8;
+  font-family:var(--font-sans);
+}
 </style>
+
 
