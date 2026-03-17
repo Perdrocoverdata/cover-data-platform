@@ -1,31 +1,31 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import CookieBanner from "../components/CookieBanner.astro";
-const { title = "CoverData", lang = "es" } = Astro.props;
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+const { title = 'CoverData', lang = 'es' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <link rel="stylesheet" href="/src/styles/global.css" />
+    </head>
 
-  <body>
-    <CookieBanner />
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+    <body>
+        <CookieBanner />
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>
 
 <style>
-  body {
-    margin: 0;
-  }
+    body {
+        margin: 0;
+    }
 </style>
-
