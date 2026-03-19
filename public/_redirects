@@ -1,11 +1,7 @@
-/  /es/  301!
-# ES (viejas -> nuevas)
-/es/legal               /es/aviso-legal            301!
-/es/privacy             /es/politica-privacidad    301!
-/es/cookies             /es/politica-cookies       301!
-
-# EN (viejas -> nuevas)
-/en/legal               /en/legal-notice           301!
-/en/privacy             /en/privacy-policy         301!
-/en/cookies             /en/cookie-policy          301!
-
+/    /es/    301!
+/es/legal        /es/aviso-legal        301!
+/es/privacy      /es/politica-privacidad 301!
+/es/cookies      /es/politica-cookies   301!
+/en/legal        /en/legal-notice       301!
+/en/privacy      /en/privacy-policy     301!
+/en/cookies      /en/cookie-policy      301!
