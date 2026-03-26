@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* TIPOGRAFÍA Y RESETEO BÁSICO */
 *,
 *::before,
@@ -30,23 +31,43 @@ a:hover {
   position: relative;
 }
 
-.nav-submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 260px;
-  z-index: 50;
+/* ================================
+   SUBMENÚ — ESCRITORIO (hover)
+   ================================ */
+@media (min-width: 768px) {
+  .nav-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 260px;
+    z-index: 50;
+  }
+
+  .nav-group:hover .nav-submenu {
+    display: flex;
+  }
 }
 
-.nav-group:hover .nav-submenu {
-  display: flex;
+/* ================================
+   SUBMENÚ — MÓVIL (details)
+   ================================ */
+@media (max-width: 767px) {
+  .nav-submenu {
+    display: flex !important;
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    gap: 8px;
+    background: transparent;
+    min-width: auto;
+  }
 }
 
 /* ANIMACIÓN SUBMENÚ */
@@ -64,4 +85,3 @@ a:hover {
 .animate-fade-slide {
   animation: fade-slide 0.25s ease-out;
 }
-
